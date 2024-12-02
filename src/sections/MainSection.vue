@@ -1,6 +1,6 @@
 <template>
 
-	<section class="h-screen px-12 lg:px-16 py-16">
+	<section class="h-screen py-16">
 		<div class="w-full md:w-1/3 h-full flex flex-col md:justify-center info">
 			<p class="gubamiText">
 				$GUBAMI
@@ -167,6 +167,9 @@ section {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	max-width: 1600px;
+	margin: 0 auto;
+	padding: 0 20px;
 }
 .image-container {
   position: relative;
@@ -200,38 +203,27 @@ section {
   transition: transform 5s ease-in-out;
 }
 .gubamiText {
-	font-size: 60px;
+	font-size: 80px;
 	font-weight: 700;
-	color: red;
+	color: #AEAEAE !important;
+	text-shadow: 3px 3px black;
 }
 .sosalText {
-	font-size: 40px;
+	font-size: 50px;
 	font-weight: 700;
-	color: red;
+	color: #AEAEAE !important;
+	text-shadow: 3px 3px black;
 }
 .info {
 	text-align: center;
 }
 .mainSOSAL {
-	width: 200px;
+	width: 300px;
 	margin: 20px auto;
 }
 .mainSOSAL img {
 	border-radius: 50%;
 	object-fit: cover;
-	transition: transform 1s ease-in-out;
-	animation: pulse 2s infinite;
-}
-@keyframes pulse {
-	0% {
-		transform: scale(0.9); /* Обычный размер */
-	}
-	50% {
-		transform: scale(1.1); /* Увеличение */
-	}
-	100% {
-		transform: scale(0.9); /* Возврат */
-	}
 }
 .menuItem {
 	color: white;
