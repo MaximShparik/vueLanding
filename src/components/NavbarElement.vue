@@ -1,7 +1,7 @@
 <template>
     <!-- Navbar start -->
 		<nav class="w-screen fixed lg:px-20 flex z-50">
-			<div style="display: flex;">
+			<div style="display: flex;" class="actions">
 				<div class="navItem">
 					<a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
 						<img src="@/assets/orel.png" alt="" style="margin: 2px;">
@@ -113,6 +113,16 @@ nav {
 @media (max-width: 1200px) {
 	nav {
 		flex-direction: column-reverse;
+		padding: 0;
+	}
+	.contractInfo {
+		margin-bottom: 20px;
+	}
+	.actions {
+		justify-content: space-around;
+	}
+	.navItem {
+		margin: 0;
 	}
 }
 </style>

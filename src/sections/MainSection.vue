@@ -235,11 +235,14 @@ section {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
-	width: 600px;
+	width: 800px;
 }
 .contentItem {
 	background: #000000ab;
 	padding: 20px;
+}
+.contentItem .title {
+	font-size: 60px;
 }
 .contentItem.dis {
 	background: #322c8580;
@@ -260,11 +263,8 @@ section {
 	justify-content: space-around;
 	cursor: pointer;
 }
-.contentItem .title {
-	font-size: 20px;
-}
 .contentItem .statistikIMG {
-	width: 200px;
+	width: 300px;
 	margin: 20px auto;
 }
 .contentItem .statistikIMG img {
