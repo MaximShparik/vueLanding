@@ -39,10 +39,12 @@
 			<div class="contentItem vote dis">
 				<div class="discordBox">
 					<div class="discordText">Discrod for party games, vibes, alpha on the way..</div>
-					<div class="discordBtn">
-						<img src="@/assets/dis.png" alt="">
-						<span>Join the DIscord</span>
-					</div>
+					<a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
+						<div class="discordBtn">
+							<img src="@/assets/dis.png" alt="">
+							<span>Join the DIscord</span>
+						</div>
+					</a>
 				</div>
 			</div>
 			<div class="contentItem vote pump">
@@ -51,9 +53,15 @@
 						Pump.fun fairy launch
 					</div>
 					<div class="pumpImgs">
-						<img src="@/assets/tablet.png" alt="">
-						<img src="@/assets/tablet.png" alt="">
-						<img src="@/assets/tablet.png" alt="">
+						<a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
+							<img src="@/assets/tablet.png" alt="">
+						</a>
+						<a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
+							<img src="@/assets/tablet.png" alt="">
+						</a>
+						<a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
+							<img src="@/assets/tablet.png" alt="">
+						</a>
 					</div>
 				</div>
 			</div>
@@ -86,7 +94,7 @@
 					<img src="@/assets/mainSOSAL.jpeg" alt="">
 				</div>
 			</div>
-			<div class="contentItem discord">
+			<div class="contentItem discord" style="background: none;">
 				<div class="image-container">
 					<img :src="currentImage" alt="Rotating Image" />
 				</div>
@@ -210,6 +218,20 @@ section {
 }
 .mainSOSAL img {
 	border-radius: 50%;
+	object-fit: cover;
+	transition: transform 1s ease-in-out;
+	animation: pulse 2s infinite;
+}
+@keyframes pulse {
+	0% {
+		transform: scale(0.9); /* Обычный размер */
+	}
+	50% {
+		transform: scale(1.1); /* Увеличение */
+	}
+	100% {
+		transform: scale(0.9); /* Возврат */
+	}
 }
 .menuItem {
 	color: white;
@@ -342,5 +364,18 @@ section {
   text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
     color: #fff6a9;
   }
+}
+
+@media (max-width: 1200px) {
+	section {
+		height: fit-content !important;
+    flex-direction: column;
+		padding: 0 !important;
+		padding-top: 200px !important;
+	}
+	.content {
+		width: 100%;
+		margin-top: 20px;
+	}
 }
 </style>

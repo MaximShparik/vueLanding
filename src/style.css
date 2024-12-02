@@ -11,6 +11,10 @@
     font-style: normal;
 }
 
+body {
+    background: black;
+}
+
 .btn {
     @apply bg-stone-700 text-stone-100 shadow rounded-lg py-2 px-8;
 }

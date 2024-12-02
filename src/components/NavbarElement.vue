@@ -1,17 +1,27 @@
 <template>
     <!-- Navbar start -->
 		<nav class="w-screen fixed p-4 lg:px-20 flex z-50">
-			<div class="navItem">
-				<img src="@/assets/orel.png" alt="">
-			</div>
-			<div class="navItem">
-				<img src="@/assets/x.png" alt="" style="padding: 7px;">
-			</div>
-			<div class="navItem">
-				<img src="@/assets/tg.png" alt="">
-			</div>
-			<div class="navItem">
-				<img src="@/assets/tablet.png" alt="" style="padding: 5px;">
+			<div style="display: flex;">
+				<div class="navItem">
+					<a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
+						<img src="@/assets/orel.png" alt="">
+					</a>
+				</div>
+				<div class="navItem">
+					<a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
+						<img src="@/assets/x.png" alt="" style="padding: 7px;">
+					</a>
+				</div>
+				<div class="navItem">
+					<a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
+						<img src="@/assets/tg.png" alt="">
+					</a>
+				</div>
+				<div class="navItem">
+					<a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
+						<img src="@/assets/tablet.png" alt="" style="padding: 5px;">
+					</a>
+				</div>
 			</div>
 			<div class="contractInfo">
 				<div class="contract">
@@ -19,7 +29,7 @@
 				</div>
 				<div class="info">
 					<div class="text">Contract address</div>
-					<div class="copy"><img src="@/assets/copy.png" alt=""></div>
+					<div class="copy" @click="copy('H4PDo8ngWwC4quPTRWfTr2HorUQ2Ep4G3JVeJHMfkZAT')"><img src="@/assets/copy.png" alt=""></div>
 				</div>
 			</div>
 		</nav>
@@ -29,16 +39,16 @@
 <script>
 
 export default {
-    methods: {
-		// Toogle navbar mode 
-        navToggle() {
-			let menu = document.querySelector("[role='menu']");
-			let isExpanded = menu.getAttribute('aria-expanded');
-			menu.setAttribute('aria-expanded', !isExpanded);
-			menu.classList.toggle('hidden');
-			menu.classList.toggle('flex');
-		}
-    }
+	methods: {
+		copy (value) {
+      var inp =document.createElement('input')
+      document.body.appendChild(inp)
+      inp.value = value
+      inp.select()
+      document.execCommand('copy',false)
+      inp.remove()
+    },
+	}
 }
 </script>
 
@@ -49,7 +59,7 @@ nav {
 .navItem {
 	width: 40px;
 	height: 40px;
-	background: #00fc00;
+	background: #a2f7a2;
 	border-radius: 50%;
 	margin-right: 30px;
 	margin-top: 25px;
@@ -61,7 +71,7 @@ nav {
 .info {
 	display: flex;
 	flex-direction: row;
-	background: green;
+	background: #008000c7;
 	padding: 5px;
 	border-radius: 0px 0px 17px 17px;
 	justify-content: space-around;
@@ -77,12 +87,18 @@ nav {
 	border-radius: 20px;
 }
 .contract {
-	background: grey;
+	background: #030402ad;
 	padding: 10px;
 	border-radius: 17px 17px 0px 0px;
 	color: white;
 }
 .text {
 	color: black;
+}
+
+@media (max-width: 1200px) {
+	nav {
+		flex-direction: column-reverse;
+	}
 }
 </style>
