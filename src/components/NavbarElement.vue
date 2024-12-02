@@ -2,16 +2,16 @@
     <!-- Navbar start -->
 		<nav class="w-screen fixed p-4 lg:px-20 flex z-50">
 			<div class="navItem">
-				<img src="@/assets/tg.png" alt="">
+				<img src="@/assets/orel.png" alt="">
+			</div>
+			<div class="navItem">
+				<img src="@/assets/x.png" alt="" style="padding: 7px;">
 			</div>
 			<div class="navItem">
 				<img src="@/assets/tg.png" alt="">
 			</div>
 			<div class="navItem">
-				<img src="@/assets/tg.png" alt="">
-			</div>
-			<div class="navItem">
-				<img src="@/assets/tg.png" alt="">
+				<img src="@/assets/tablet.png" alt="" style="padding: 5px;">
 			</div>
 			<div class="contractInfo">
 				<div class="contract">
@@ -55,6 +55,9 @@ nav {
 	margin-top: 25px;
 	cursor: pointer;
 }
+.navItem img {
+	height: 40px;
+}
 .info {
 	display: flex;
 	flex-direction: row;
@@ -70,7 +73,7 @@ nav {
 	width: 20px;
 }
 .contractInfo {
-	border: 2px solid red;
+	/* border: 2px solid red; */
 	border-radius: 20px;
 }
 .contract {

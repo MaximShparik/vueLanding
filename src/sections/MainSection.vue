@@ -1,6 +1,6 @@
 <template>
 
-	<section class="h-screen px-12 lg:px-32 py-32">
+	<section class="h-screen px-12 lg:px-16 py-16">
 		<div class="w-full md:w-1/3 h-full flex flex-col md:justify-center info">
 			<p class="gubamiText">
 				$GUBAMI
@@ -13,8 +13,9 @@
 			</div>
 			<div class="menu">
 				<div class="menuItem" @click="showInfo('vote')">Vote</div>
-				<div class="menuItem" @click="showInfo('meme')">Meme meaning</div>
+				<div class="menuItem mem" @click="showInfo('meme')">Meme meaning</div>
 				<div class="menuItem" @click="showInfo('token')">Tokenomics</div>
+				<div class="menuItem" @click="showInfo('discord')">Memes</div>
 				<!-- <div class="menuItem" @click="showInfo('discord')">Discord</div> -->
 			</div>
 		</div>
@@ -35,6 +36,28 @@
 					</div>
 				</div>
 			</div>
+			<div class="contentItem vote dis">
+				<div class="discordBox">
+					<div class="discordText">Discrod for party games, vibes, alpha on the way..</div>
+					<div class="discordBtn">
+						<img src="@/assets/dis.png" alt="">
+						<span>Join the DIscord</span>
+					</div>
+				</div>
+			</div>
+			<div class="contentItem vote pump">
+				<div class="pumpBox">
+					<div class="pumpText">
+						Pump.fun fairy launch
+					</div>
+					<div class="pumpImgs">
+						<img src="@/assets/tablet.png" alt="">
+						<img src="@/assets/tablet.png" alt="">
+						<img src="@/assets/tablet.png" alt="">
+					</div>
+				</div>
+			</div>
+
 			<div class="contentItem meme">
 				The original name "GUBAMI" refers to an emote on Twitch, but I felt that this meme
 				deserved more than just being a local emote on some streamers' channels. The origin story
@@ -50,7 +73,23 @@
 				from the game.
 			</div>
 			<div class="contentItem token">
-				Tokenomics TokenomicsTokenomicsTokenomicsTokenomics Tokenomics Tokenomics TokenomicsTokenomicsTokenomicsTokenomicsTokenomics Tokenomics TokenomicsTokenomics Tokenomics Tokenomics Tokenomics Tokenomics Tokenomics м Tokenomics Tokenomicsм Tokenomicsvм мм Tokenomicsv Tokenomics
+				<div class="title">
+					Tokenomocs:
+				</div>
+				<div class="subtitle">
+					4.69% - myself. 1.5 SOL port, moon or dust, idc.
+				</div>
+				<div class="subtitle">
+					95.31% - LP + PvP
+				</div>
+				<div class="statistikIMG">
+					<img src="@/assets/mainSOSAL.jpeg" alt="">
+				</div>
+			</div>
+			<div class="contentItem discord">
+				<div class="image-container">
+					<img :src="currentImage" alt="Rotating Image" />
+				</div>
 			</div>
 		</div>
 
@@ -70,57 +109,69 @@
 
 <script>
 export default {
+	data() {
+    return {
+      images: [
+				require('@/assets/1.jpeg'),
+        require('@/assets/2.jpeg'),
+        require('@/assets/3.jpeg'),
+        require('@/assets/4.jpeg'),
+        require('@/assets/5.jpeg'),
+        require('@/assets/6.jpeg'),
+        require('@/assets/7.jpeg'),
+        require('@/assets/8.jpeg'),
+        require('@/assets/9.jpeg'),
+      ],
+      currentIndex: 0,
+      currentImage: require('@/assets/1.jpeg') // Инициализация первой картинки
+    };
+  },
+  mounted() {
+    this.startImageRotation();
+  },
 	methods: {
 		showInfo (tag) {
-			if (tag === 'vote') {
-				document.querySelector('.vote').style.display = 'block'
-				document.querySelector('.meme').style.display = 'none'
-				document.querySelector('.token').style.display = 'none'
-			}
-			if (tag === 'meme') {
-				document.querySelector('.vote').style.display = 'none'
-				document.querySelector('.meme').style.display = 'block'
-				document.querySelector('.token').style.display = 'none'
-			}
-			if (tag === 'token') {
-				document.querySelector('.vote').style.display = 'none'
-				document.querySelector('.meme').style.display = 'none'
-				document.querySelector('.token').style.display = 'block'
-			}
-		}
+			document.querySelectorAll('.contentItem').forEach(item => {
+				item.style.display = 'none'
+			})
+			document.querySelectorAll(`.${tag}`).forEach(item => {
+				item.style.display = 'block'
+			})
+		},
+		startImageRotation() {
+      setInterval(() => {
+        this.rotateImage();
+      }, 3000); // Смена изображения каждые 5 секунд
+    },
+    rotateImage() {
+      this.currentIndex = (this.currentIndex + 1) % this.images.length;
+      this.currentImage = this.images[this.currentIndex];
+    },
 	},
-	// mounted () {
-
-	// 	const flyingImage = document.getElementById('flying-image');
-
-	// 	function getRandomPosition() {
-	// 		const imageWidth = flyingImage.offsetWidth;
-	// 		const imageHeight = flyingImage.offsetHeight;
-			
-	// 		// Вычисляем доступные координаты с учётом размеров изображения
-	// 		const x = Math.random() * (window.innerWidth - imageWidth);
-	// 		const y = Math.random() * (window.innerHeight - imageHeight);
-	// 		return { x, y };
-	// 	}
-
-	// 	function moveImage() {
-	// 		const { x, y } = getRandomPosition();
-	// 		flyingImage.style.transform = `translate(${x}px, ${y}px)`;
-	// 	}
-
-	// 	moveImage()
-
-	// 	// Запускаем анимацию каждые 2 секунды
-	// 	setInterval(moveImage, 2000);
-	// }
 }
 </script>
 
 <style>
+* {
+	color: white !important;
+}
 section {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+}
+.image-container {
+  position: relative;
+	height: 300px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+	object-fit: contain;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
 }
 .video {
   position: absolute;
@@ -175,15 +226,52 @@ section {
 .contentItem {
 	background: #000000ab;
 	padding: 20px;
-	color: white;
 }
-.contentItem > * {
-	color: white;
+.contentItem.dis {
+	background: #322c8580;
+}
+.contentItem.pump {
+	background: #2eab9682;
+}
+.pumpBox {
+	display: flex;
+	justify-content: space-around;
+}
+.pumpText {
+	line-height: 32px;
+}
+.pumpImgs {
+	display: flex;
+	width: 30%;
+	justify-content: space-around;
+	cursor: pointer;
+}
+.contentItem .title {
+	font-size: 20px;
+}
+.contentItem .statistikIMG {
+	width: 200px;
+	margin: 20px auto;
+}
+.contentItem .statistikIMG img {
+	border-radius: 50%;
+}
+.discordBtn {
+	display: flex;
+	justify-content: space-around;
+	padding: 10px;
+	border: 1px solid white;
+	border-radius: 30px;
+	margin-top: 20px;
+	cursor: pointer;
 }
 .meme {
 	display: none;
 }
 .token {
+	display: none;
+}
+.discord {
 	display: none;
 }
 .voteBtns {
@@ -199,5 +287,60 @@ section {
 	border-radius: 30px;
 	padding: 10px;
 	cursor: pointer;
+}
+.mem {
+	text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  text-align: center;
+  animation: blink 7s infinite;
+  -webkit-animation: blink 7s infinite;
+}
+
+@-webkit-keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+/*     color: #fccaff;
+    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  }
+}
+
+@keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+/*     color: #fccaff;
+    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  }
 }
 </style>
