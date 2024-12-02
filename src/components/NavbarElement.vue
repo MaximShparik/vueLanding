@@ -91,6 +91,7 @@ nav {
 	padding: 10px;
 	border-radius: 17px 17px 0px 0px;
 	color: white;
+	word-break: break-all;
 }
 .text {
 	color: black;
