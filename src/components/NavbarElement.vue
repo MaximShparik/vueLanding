@@ -56,6 +56,8 @@ export default {
 nav {
 	justify-content: flex-end;
 	max-width: 1600px;
+	/* max-width: 100%; */
+	width: 100%;
 	padding: 0 20px;
 	left: 50%;
 	transform: translateX(-50%);

@@ -1,6 +1,6 @@
 <template>
 
-	<section class="h-screen py-16">
+	<section class="py-16">
 		<div class="w-full md:w-1/3 h-full flex flex-col md:justify-center info">
 			<p class="gubamiText">
 				$GUBAMI
@@ -14,8 +14,8 @@
 			<div class="menu">
 				<div class="menuItem" @click="showInfo('vote')">Vote</div>
 				<div class="menuItem mem" @click="showInfo('meme')">Meme meaning</div>
+				<!-- <div class="menuItem" @click="showInfo('discord')">Mog Examples</div> -->
 				<div class="menuItem" @click="showInfo('token')">Tokenomics</div>
-				<div class="menuItem" @click="showInfo('discord')">Memes</div>
 				<!-- <div class="menuItem" @click="showInfo('discord')">Discord</div> -->
 			</div>
 		</div>
@@ -38,11 +38,11 @@
 			</div>
 			<div class="contentItem vote dis">
 				<div class="discordBox">
-					<div class="discordText">Discrod for party games, vibes, alpha on the way..</div>
+					<div class="discordText">New TikTok meta is ready</div>
 					<a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
 						<div class="discordBtn">
-							<img src="@/assets/dis.png" alt="">
-							<span>Join the DIscord</span>
+							<img src="@/assets/tiktok.png" alt="">
+							<span>Join the Tiktok movement</span>
 						</div>
 					</a>
 				</div>
@@ -91,7 +91,7 @@
 					95.31% - LP + PvP
 				</div>
 				<div class="statistikIMG">
-					<img src="@/assets/mainSOSAL.jpeg" alt="">
+					<img src="@/assets/tokenCircle.png" alt="">
 				</div>
 			</div>
 			<div class="contentItem discord" style="background: none;">
@@ -99,6 +99,8 @@
 					<img :src="currentImage" alt="Rotating Image" />
 				</div>
 			</div>
+
+			<img class="arrowDown" src="@/assets/down.png" alt="">
 		</div>
 
 		<video
@@ -165,11 +167,22 @@ export default {
 }
 section {
 	display: flex;
-	flex-direction: row;
+	/* flex-direction: row; */
 	justify-content: space-between;
 	max-width: 1600px;
 	margin: 0 auto;
 	padding: 0 20px;
+	height: calc(100vh - 0px);
+  max-height: 100vh; /* Предотвращаем изменение высоты */
+  box-sizing: border-box;
+}
+.arrowDown {
+	height: 60px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 50px;
+	cursor: pointer;
 }
 .image-container {
   position: relative;
@@ -191,7 +204,7 @@ section {
 	right: 0;
 	bottom: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   object-fit: cover;
   z-index: -1;
 }
@@ -205,7 +218,7 @@ section {
 .gubamiText {
 	font-size: 80px;
 	font-weight: 700;
-	color: #AEAEAE !important;
+	color: #D6FE25 !important;
 	text-shadow: 3px 3px black;
 }
 .sosalText {
@@ -235,7 +248,7 @@ section {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
-	width: 800px;
+	width: 500px;
 }
 .contentItem {
 	background: #000000ab;
@@ -263,12 +276,13 @@ section {
 	justify-content: space-around;
 	cursor: pointer;
 }
-.contentItem .statistikIMG {
+/* .contentItem .statistikIMG {
 	width: 300px;
 	margin: 20px auto;
-}
+} */
 .contentItem .statistikIMG img {
 	border-radius: 50%;
+	width: 100%;
 }
 .discordBtn {
 	display: flex;
@@ -278,6 +292,8 @@ section {
 	border-radius: 30px;
 	margin-top: 20px;
 	cursor: pointer;
+	max-width: 300px;
+	margin-left: auto;
 }
 .meme {
 	display: none;
@@ -364,10 +380,17 @@ section {
     flex-direction: column;
 		padding: 0 !important;
 		padding-top: 200px !important;
+		min-height: fit-content;
+	}
+	.menu {
+		margin-top: 50px;
 	}
 	.content {
 		width: 100%;
 		margin-top: 20px;
+	}
+	.arrowDown {
+		display: none;
 	}
 }
 </style>
