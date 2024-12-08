@@ -12,7 +12,11 @@
       </button>
       <div class="carouselText">
         He is him.
+      </div>
     </div>
+    <div class="twitter">
+      <a class="twitter-timeline" data-lang="en" data-height="400" data-theme="dark" href="https://twitter.com/XDevelopers?ref_src=twsrc%5Etfw">
+      </a> 
     </div>
     <div class="trash">
         <img src="https://dd.dexscreener.com/ds-data/tokens/solana/HwPtbFpd3VTe3tfyosoVtPf9WPuSk5gAKkN5xp6Npump/header.png?size=xl&key=ec942d" alt="">
@@ -69,7 +73,11 @@
     justify-content: center;
     overflow: hidden;
   }
-  
+  .twitter {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
   img {
     max-width: 100%;
     max-height: 100%;
