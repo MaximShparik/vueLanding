@@ -8,7 +8,7 @@
 					</a>
 				</div>
 				<div class="navItem">
-					<a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
+					<a href="https://x.com/gubamisosal" target="_blank" rel="noopener noreferrer">
 						<img src="@/assets/x.png" alt="" style="padding: 9px; margin-left: 1px; margin-top: 1px;">
 					</a>
 				</div>
@@ -47,6 +47,10 @@ export default {
       inp.select()
       document.execCommand('copy',false)
       inp.remove()
+			document.querySelector('.copy').style.background = '#00ff00'
+			setTimeout(() => {
+				document.querySelector('.copy').style.background = '#90D990'
+			}, 300);
     },
 	}
 }
@@ -79,17 +83,20 @@ nav {
 	display: flex;
 	flex-direction: row;
 	background: linear-gradient(90deg, #B2E09C, #617A55);
-	padding: 5px;
+	/* padding: 5px; */
 	border-radius: 0px 0px 5px 5px;
 	justify-content: space-between;
 	cursor: pointer;
 }
 .info .text {
 	margin: 0 auto;
+	padding: 5px;
 }
 .copy {
 	cursor: pointer;
 	width: 90px;
+	background: #90D990;
+	padding: 5px;
 }
 .copy img {
 	width: 20px;

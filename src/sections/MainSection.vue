@@ -12,11 +12,11 @@
 				<img src="@/assets/mainSOSAL.jpeg" alt="gubami">
 			</div>
 			<div class="menu">
-				<div class="menuItem" @click="showInfo('vote')">Vote</div>
 				<div class="menuItem mem" @click="showInfo('meme')">Meme meaning</div>
-				<!-- <div class="menuItem" @click="showInfo('discord')">Mog Examples</div> -->
+				<div class="menuItem" @click="showInfo('discord')">Mog Examples</div>
 				<div class="menuItem" @click="showInfo('token')">Tokenomics</div>
-				<!-- <div class="menuItem" @click="showInfo('discord')">Discord</div> -->
+				<div class="menuItem" @click="showInfo('vote')">Vote</div>
+				<div class="menuItem" @click="scrollToMems()">Content</div>
 			</div>
 		</div>
 
@@ -67,18 +67,26 @@
 			</div>
 
 			<div class="contentItem meme">
-				The original name "GUBAMI" refers to an emote on Twitch, but I felt that this meme
-				deserved more than just being a local emote on some streamers' channels. The origin story
-				is quite amusing: there's a long-standing joke where you bait someone into answering
-				"yes" to a question and, right before they respond, you quickly ask, "SOSAL?" ("Did you
-				suck?" - referring to oral activity), making their answer "yes" apply to that question. If
-				they "SOSAL" (sucked) then they definitely did it with "GUBAMI" (which loosely
-				translates to "sucked with lips"). Mog type shit. After countless jokes of this kind on
-				Twitch, this emote emerged. Below, I'll provide examples of how this played out.
-				In recent months, this joke has frequently appeared in the local "Deadlock" game
-				community. So original Twith emote is about 3 month old. Deadlock is amazing btw. So, to
-				answer the question of who is depicted in the emote: it's Abrams with huge lips, a character
-				from the game.
+				<div class="left">
+					<div class="title">
+						Meme Meaning
+					</div>
+					<div class="text">
+						Aight, so the OG name "GUBAMI" came from a Twitch emote, but honestly, this meme deserved to go bigger than just sittin' in some streamers' channel emotes. The backstory? Straight-up hilarious. It’s all about this classic troll move: you ask someone some random question to get them to say "yes," and right before they answer, you hit 'em with "SOSAL?" (basically, "Did you suck?"—you know what kinda suckin' we talkin' 'bout). Boom, they say "yes," and it’s game over.
+						<br>
+						<br>
+						If they "SOSAL" then they definitely did it with "GUBAMI" which loosely means "sucked with lips"—straight MOG move, fr. This whole vibe turned into endless Twitch banter, and bam, the emote was born.
+						<br>
+						<br>
+						Lately, this joke's been poppin' off hard in the "Deadlock" game community—y’all gotta check it out, it’s fire. Anyway, for those wondering who’s in the emote, it’s Abrams from the game, rocking them cartoonishly massive lips. Straight-up meme gold, bruh.
+					</div>
+				</div>
+				<div class="right">
+					<img src="@/assets/999.png" alt="">
+					<div class="rightText"  @click="showInfo('discord')">
+						Mog Examples ⇒
+					</div>
+				</div>
 			</div>
 			<div class="contentItem token">
 				<div class="title">
@@ -94,9 +102,19 @@
 					<img src="@/assets/tokenCircle.png" alt="">
 				</div>
 			</div>
-			<div class="contentItem discord" style="background: none;">
-				<div class="image-container">
-					<img :src="currentImage" alt="Rotating Image" />
+			<div class="contentItem discord">
+				<div class="title">
+					Examples
+				</div>
+				<video
+					src="@/assets/example.mp4"
+					class="exampleVideo"
+					loop
+					autoplay
+					controls
+				></video>
+				<div class="discordSubtitle">
+					Jamside mogged Lystic with GUBAMI move
 				</div>
 			</div>
 
@@ -140,12 +158,28 @@ export default {
     this.startImageRotation();
   },
 	methods: {
+		scrollToMems () {
+			// const currentScroll = window.scrollY;
+			// Высота окна (высота экрана)
+			const screenHeight = window.innerHeight;
+			// Новая позиция прокрутки
+			// const nextScroll = currentScroll + screenHeight;
+			// Прокрутка с анимацией
+			window.scrollTo({
+				top: screenHeight,
+				behavior: 'smooth', // Плавная прокрутка
+			});
+		},
 		showInfo (tag) {
 			document.querySelectorAll('.contentItem').forEach(item => {
 				item.style.display = 'none'
 			})
 			document.querySelectorAll(`.${tag}`).forEach(item => {
-				item.style.display = 'block'
+				if (tag === 'meme') {
+					item.style.display = 'grid'
+				} else {
+					item.style.display = 'block'
+				}
 			})
 		},
 		startImageRotation() {
@@ -176,12 +210,25 @@ section {
   max-height: 100vh; /* Предотвращаем изменение высоты */
   box-sizing: border-box;
 }
+.meme .right {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.rightText {
+	font-size: 25px;
+	color: #B93D3D !important;
+	cursor: pointer;
+}
+.meme .title {
+	color: #D6FE25 !important;
+}
 .arrowDown {
 	height: 60px;
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
-	bottom: 50px;
+	bottom: 10px;
 	cursor: pointer;
 }
 .image-container {
@@ -208,6 +255,9 @@ section {
   object-fit: cover;
   z-index: -1;
 }
+/* .exampleVideo {
+
+} */
 #flying-image {
   position: absolute;
 	top: 0;
@@ -240,7 +290,7 @@ section {
 }
 .menuItem {
 	color: white;
-	font-size: 40px;
+	font-size: 30px;
 	font-weight: 400;
 	cursor: pointer;
 }
@@ -248,14 +298,23 @@ section {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
-	width: 500px;
 }
 .contentItem {
 	background: #000000ab;
 	padding: 20px;
+	width: 500px;
 }
 .contentItem .title {
-	font-size: 60px;
+	color: #D6FE25 !important;
+	font-size: 40px;
+}
+.contentItem.discord {
+	width: 800px;
+}
+.discordSubtitle {
+	text-align: center;
+	font-size: 25px;
+	margin-top: 10px;
 }
 .contentItem.dis {
 	background: #322c8580;
@@ -297,6 +356,8 @@ section {
 }
 .meme {
 	display: none;
+	width: 800px;
+	grid-template-columns: 3fr 2fr;
 }
 .token {
 	display: none;
@@ -391,6 +452,23 @@ section {
 	}
 	.arrowDown {
 		display: none;
+	}
+	.meme {
+		width: 100%;
+		grid-template-columns: 1fr;
+		grid-gap: 30px;
+	}
+	.contentItem {
+		width: 100%;
+	}
+	.contentItem.discord {
+		width: 100%;
+	}
+	.exampleVideo {
+		width: 100%;
+	}
+	.meme .right {
+		flex-direction: column-reverse;
 	}
 }
 </style>

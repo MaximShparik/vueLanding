@@ -10,13 +10,14 @@
       <button @click="nextImage" class="arrow right">
         <img src="@/assets/navigate_next.png" alt="">
       </button>
-      <div class="carouselText">
+      <!-- <div class="carouselText">
         He is him.
-      </div>
+      </div> -->
     </div>
     <div class="twitter">
-      <a class="twitter-timeline" data-lang="en" data-height="400" data-theme="dark" href="https://twitter.com/XDevelopers?ref_src=twsrc%5Etfw">
-      </a> 
+      <!-- <a class="twitter-timeline" data-lang="en" data-height="400" data-theme="dark" href="https://twitter.com/XDevelopers?ref_src=twsrc%5Etfw">
+      </a>  -->
+      <a class="twitter-timeline" data-lang="en" data-height="400" data-theme="dark" href="https://twitter.com/gubamisosal?ref_src=twsrc%5Etfw"></a>
     </div>
     <div class="trash">
         <img src="https://dd.dexscreener.com/ds-data/tokens/solana/HwPtbFpd3VTe3tfyosoVtPf9WPuSk5gAKkN5xp6Npump/header.png?size=xl&key=ec942d" alt="">
