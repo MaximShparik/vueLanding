@@ -25,7 +25,7 @@
 			</div>
 			<div class="contractInfo">
 				<div class="contract">
-					H4PDo8ngWwC4quPTRWfTr2HorUQ2Ep4G3JVeJHMfkZAT
+					xxx
 				</div>
 				<div class="info" @click="copy('H4PDo8ngWwC4quPTRWfTr2HorUQ2Ep4G3JVeJHMfkZAT')">
 					<div class="text">Contract address</div>

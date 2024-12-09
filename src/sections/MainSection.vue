@@ -90,7 +90,7 @@
 			</div>
 			<div class="contentItem token">
 				<div class="title">
-					Tokenomocs:
+					Tokenomics:
 				</div>
 				<div class="subtitle">
 					4.69% - myself. 1.5 SOL port, moon or dust, idc.
