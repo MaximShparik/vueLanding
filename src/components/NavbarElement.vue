@@ -2,26 +2,26 @@
     <!-- Navbar start -->
 		<nav class="w-screen fixed lg:px-20 flex z-50">
 			<div style="display: flex;" class="actions">
-				<div class="navItem">
+				<!-- <div class="navItem">
 					<a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
 						<img src="@/assets/orel.png" alt="" style="margin: 2px;">
 					</a>
-				</div>
+				</div> -->
 				<div class="navItem">
 					<a href="https://x.com/gubamisosal" target="_blank" rel="noopener noreferrer">
 						<img src="@/assets/x.png" alt="" style="padding: 9px; margin-left: 1px; margin-top: 1px;">
 					</a>
 				</div>
-				<div class="navItem">
+				<!-- <div class="navItem">
 					<a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
 						<img src="@/assets/tgHeader.png" alt="" style="padding: 5px; margin-top: 1px;">
 					</a>
-				</div>
-				<div class="navItem">
+				</div> -->
+				<!-- <div class="navItem">
 					<a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
 						<img src="@/assets/tablet.png" alt="" style="padding: 5px; margin-left: 2px;">
 					</a>
-				</div>
+				</div> -->
 			</div>
 			<div class="contractInfo">
 				<div class="contract">
