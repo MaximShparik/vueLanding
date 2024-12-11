@@ -120,7 +120,6 @@
 					src="@/assets/example.mp4"
 					class="exampleVideo"
 					loop
-					autoplay
 					controls
 				></video>
 				<div class="discordSubtitle">
