@@ -25,9 +25,9 @@
 			</div>
 			<div class="contractInfo">
 				<div class="contract">
-					XXX
+					sZGbCB1VUT3gfJUSJJXLLVAneFKHXygRSRQCPZepump
 				</div>
-				<div class="info" @click="copy('XXX')">
+				<div class="info" @click="copy('sZGbCB1VUT3gfJUSJJXLLVAneFKHXygRSRQCPZepump')">
 					<div class="text">Contract address</div>
 					<div class="copy"><img src="@/assets/copy.png" alt=""></div>
 				</div>
