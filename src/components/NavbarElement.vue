@@ -12,11 +12,11 @@
 						<img src="@/assets/x.png" alt="" style="padding: 9px; margin-left: 1px; margin-top: 1px;">
 					</a>
 				</div>
-				<!-- <div class="navItem">
-					<a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
+				<div class="navItem">
+					<a href="https://t.me/gubamisosal" target="_blank" rel="noopener noreferrer">
 						<img src="@/assets/tgHeader.png" alt="" style="padding: 5px; margin-top: 1px;">
 					</a>
-				</div> -->
+				</div>
 				<!-- <div class="navItem">
 					<a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
 						<img src="@/assets/tablet.png" alt="" style="padding: 5px; margin-left: 2px;">
@@ -25,9 +25,9 @@
 			</div>
 			<div class="contractInfo">
 				<div class="contract">
-					xxx
+					XXX
 				</div>
-				<div class="info" @click="copy('H4PDo8ngWwC4quPTRWfTr2HorUQ2Ep4G3JVeJHMfkZAT')">
+				<div class="info" @click="copy('XXX')">
 					<div class="text">Contract address</div>
 					<div class="copy"><img src="@/assets/copy.png" alt=""></div>
 				</div>
