@@ -17,7 +17,8 @@
     <div class="twitter">
       <!-- <a class="twitter-timeline" data-lang="en" data-height="400" data-theme="dark" href="https://twitter.com/XDevelopers?ref_src=twsrc%5Etfw">
       </a>  -->
-      <a class="twitter-timeline" data-lang="en" data-height="400" data-theme="dark" href="https://twitter.com/gubamisosal?ref_src=twsrc%5Etfw"></a>
+      <!-- <a class="twitter-timeline" data-lang="en" data-height="400" data-theme="dark" href="https://twitter.com/gubamisosal?ref_src=twsrc%5Etfw"></a> -->
+      <blockquote class="twitter-tweet"><p lang="zxx" dir="ltr"><a href="https://t.co/TzMzUlmPcP">pic.twitter.com/TzMzUlmPcP</a></p>&mdash; GUBAMI ♱ ♱ (@gubamisosal) <a href="https://twitter.com/gubamisosal/status/1866023388315299872?ref_src=twsrc%5Etfw">December 9, 2024</a></blockquote> 
     </div>
     <div class="trash">
         <img src="https://dd.dexscreener.com/ds-data/tokens/solana/HwPtbFpd3VTe3tfyosoVtPf9WPuSk5gAKkN5xp6Npump/header.png?size=xl&key=ec942d" alt="">
