@@ -28,11 +28,21 @@
 				</div>
 				<div class="voteBtns">
 					<div class="hands">
-						<div><img src="@/assets/hands2.png" alt=""></div>
-						<div><img src="@/assets/hands1.png" alt=""></div>
+						<div>
+							<a href="https://www.urbandictionary.com/define.php?term=Gubami" target="_blank" rel="noopener noreferrer">
+								<img src="@/assets/hands2.png" alt="">
+							</a>
+						</div>
+						<div>
+							<a href="https://www.urbandictionary.com/define.php?term=Gubami" target="_blank" rel="noopener noreferrer">
+								<img src="@/assets/hands1.png" alt="">
+							</a>
+						</div>
 					</div>
 					<div class="logo">
-						<img src="@/assets/urban.png" alt="">
+						<a href="https://www.urbandictionary.com/define.php?term=Gubami" target="_blank" rel="noopener noreferrer">
+							<img src="@/assets/urban.png" alt="">
+						</a>
 					</div>
 				</div>
 			</div>
