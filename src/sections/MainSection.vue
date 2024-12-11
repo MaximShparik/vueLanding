@@ -49,32 +49,32 @@
 			<div class="contentItem vote dis">
 				<div class="discordBox">
 					<div class="discordText">New TikTok meta is ready</div>
-					<!-- <a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
+					<a href="https://www.tiktok.com/@gubami_" target="_blank" rel="noopener noreferrer">
 						<div class="discordBtn">
 							<img src="@/assets/tiktok.png" alt="">
 							<span>Join the Tiktok movement</span>
 						</div>
-					</a> -->
+					</a>
 				</div>
 			</div>
-			<div class="contentItem vote pump">
+			<!-- <div class="contentItem vote pump">
 				<div class="pumpBox">
 					<div class="pumpText">
 						Pump.fun fairy launch
 					</div>
 					<div class="pumpImgs">
-						<!-- <a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
-							<img src="@/assets/tablet.png" alt="">
-						</a>
 						<a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
 							<img src="@/assets/tablet.png" alt="">
 						</a>
 						<a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
 							<img src="@/assets/tablet.png" alt="">
-						</a> -->
+						</a>
+						<a href="https://rbankexchange.io/?from=usdt_trc20&to=sol_sol&lang=en" target="_blank" rel="noopener noreferrer">
+							<img src="@/assets/tablet.png" alt="">
+						</a>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 			<div class="contentItem meme">
 				<div class="left">
