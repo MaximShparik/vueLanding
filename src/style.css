@@ -24,15 +24,6 @@ body {
     font-family: 'ForevsDemo', sans-serif;
 }
 
-@media (min-width: 1920px) {
-    body {
-      zoom: 1.4; /* Увеличиваем масштаб на 25% */
-    }
-    section {
-        height: 70vh; /* Сбрасываем масштаб для секций */
-      }
-  }
-
 .btn {
     @apply bg-stone-700 text-stone-100 shadow rounded-lg py-2 px-8;
 }
