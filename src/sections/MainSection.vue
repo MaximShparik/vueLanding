@@ -10,7 +10,7 @@
 
 			<div class="social">
 				<div class="xcom">
-					<a href="http://x.com" target="_blank" rel="noopener noreferrer">
+					<a href="https://x.com/italktothemoney" target="_blank" rel="noopener noreferrer">
 						<img src="@/assets/x.png" alt="">
 					</a>
 				</div>
@@ -19,8 +19,10 @@
 
 		<div id="moneyRain"></div>
 
+
 		<div class="click-overlay" @click="handleClick">
 			<p class="blinking-text">click to enable sound<br>! ! !</p>
+			<p class="blinking-text">$MONEY</p>
 		</div>
 
 		<video
@@ -175,11 +177,12 @@ export default {
   align-items: center;
   z-index: 1000; /* Над всеми элементами */
   cursor: pointer;
+	flex-direction: column-reverse;
 }
 
 /* Стили мигающего текста */
 .blinking-text {
-  font-size: 6rem;
+  font-size: 40px;
   font-weight: bold;
   color: white;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
