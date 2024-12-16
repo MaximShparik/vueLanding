@@ -18,6 +18,7 @@
 		</div>
 
 		<div id="moneyRain"></div>
+		<div id="rocketAnimation"></div>
 
 
 		<div class="click-overlay" @click="handleClick">
@@ -63,6 +64,34 @@ export default {
     },
   },
 	mounted () {
+		const rocketContainer = document.getElementById("rocketAnimation");
+		const rocketImage = require("@/assets/rocket.png"); // Замените на путь к вашей картинке
+
+		function createRocket() {
+			const rocket = document.createElement("img");
+			rocket.src = rocketImage;
+			rocket.classList.add("rocket");
+
+			// Случайная позиция и длительность
+			rocket.style.left = Math.random() * 100 + "vw";
+			rocket.style.animationDuration = Math.random() * 3 + 2 + "s"; // От 2 до 5 секунд
+
+			rocketContainer.appendChild(rocket);
+
+			// Удаляем ракету после завершения анимации
+			rocket.addEventListener("animationend", () => {
+				rocket.remove();
+			});
+		}
+
+		// Запускаем ракеты каждые 5 секунд
+		setInterval(() => {
+			const rocketCount = Math.floor(Math.random() * 3) + 3; // 3-5 ракет
+			for (let i = 0; i < rocketCount; i++) {
+				createRocket();
+			}
+		}, 5000);
+		
 		const moneyRainContainer = document.getElementById("moneyRain");
     const moneyImage = require('@/assets/usd.png'); // Замените на путь к вашей картинке
 
@@ -99,6 +128,35 @@ export default {
 </script>
 
 <style>
+#rocketAnimation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Стили для ракет */
+.rocket {
+  position: absolute;
+  width: 50px; /* Ширина ракеты */
+  animation: flyUp linear infinite;
+}
+
+/* Анимация полёта вверх */
+@keyframes flyUp {
+  0% {
+    transform: translateY(100vh) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.2);
+    opacity: 0;
+  }
+}
 .header {
 	text-align: center;
 	color: white;
