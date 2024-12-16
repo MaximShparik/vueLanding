@@ -24,6 +24,9 @@
 		<div class="click-overlay" @click="handleClick">
 			<p class="blinking-text">click to enable sound<br>! ! !</p>
 			<p class="blinking-text">$MONEY</p>
+			<a href="https://photon-sol.tinyastro.io/en/lp/FBjC29FMgzaABNjEY9md3jY6gjmUwmKPPrnAxqDg6SHp" target="_blank" rel="noopener noreferrer">
+				<p class="blinking-text">TAKE MONEY</p>
+			</a>
 		</div>
 
 		<video
