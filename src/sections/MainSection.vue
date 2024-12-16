@@ -20,7 +20,7 @@
 		<div id="moneyRain"></div>
 
 		<div class="click-overlay" @click="handleClick">
-			<p class="blinking-text">CLICK<br>! ! !</p>
+			<p class="blinking-text">click to enable sound<br>! ! !</p>
 		</div>
 
 		<video
