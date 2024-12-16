@@ -4,8 +4,8 @@
 
 		<div class="header">
 			<div class="ca">
-				<div class="contract">XXXXXXXXXXXXXXXX</div>
-				<div class="copy" @click="copy('XXXXXXXXXXXXXX')">COPY</div>
+				<div class="contract">tmWFcR3kKSSWKtwHdQypxqtdewNXW2VD4VANWAzpump</div>
+				<div class="copy" @click="copy('tmWFcR3kKSSWKtwHdQypxqtdewNXW2VD4VANWAzpump')">COPY</div>
 			</div>
 
 			<div class="social">
