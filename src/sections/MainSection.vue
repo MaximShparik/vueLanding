@@ -5,7 +5,7 @@
 		<div class="header">
 			<div class="ca">
 				<div class="contract">XXXXXXXXXXXXXXXX</div>
-				<div class="copy" @click="copy('XXXXXXXXXXXXXXXX')">COPY</div>
+				<div class="copy" @click="copy('XXXXXXXXXXXXXX')">COPY</div>
 			</div>
 
 			<div class="social">
