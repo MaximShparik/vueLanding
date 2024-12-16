@@ -2,6 +2,21 @@
 
 	<section class="py-16">
 
+		<div class="header">
+			<div class="ca">
+				<div class="contract">XXXXXXXXXXXXXXXX</div>
+				<div class="copy" @click="copy('XXXXXXXXXXXXXXXX')">COPY</div>
+			</div>
+
+			<div class="social">
+				<div class="xcom">
+					<a href="http://x.com" target="_blank" rel="noopener noreferrer">
+						<img src="@/assets/x.png" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+
 		<div id="moneyRain"></div>
 
 		<div class="click-overlay" @click="handleClick">
@@ -31,6 +46,18 @@ export default {
     handleClick() {
       console.log("Клик выполнен!");
       // Здесь можно добавить нужную логику, например скрыть надпись
+    },
+		copy (value) {
+      var inp =document.createElement('input')
+      document.body.appendChild(inp)
+      inp.value = value
+      inp.select()
+      document.execCommand('copy',false)
+      inp.remove()
+			document.querySelector('.copy').textContent = 'COPIED ! ! !'
+			setTimeout(() => {
+				document.querySelector('.copy').textContent = 'COPY'
+			}, 300)
     },
   },
 	mounted () {
@@ -70,6 +97,31 @@ export default {
 </script>
 
 <style>
+.header {
+	text-align: center;
+	color: white;
+	font-size: 40px;
+	position: absolute;
+	z-index: 9999999;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.ca {
+	background: #00000066;
+	width: fit-content;
+	margin: 0 auto;
+	padding: 10px 30px;
+	border-radius: 30px;
+	max-width: 80vw;
+}
+.copy {
+	color: #79ff32;
+	cursor: pointer;
+}
+.xcom img {
+	width: 50px;
+	margin: 40px auto;
+}
 .video {
   position: absolute;
 	top: 0;
@@ -142,6 +194,12 @@ export default {
   }
   50% {
     opacity: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .ca {
+    font-size: 25px;
   }
 }
 </style>
