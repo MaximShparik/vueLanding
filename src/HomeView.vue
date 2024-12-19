@@ -1,6 +1,6 @@
 <template>
 
-	<main-section></main-section>
+	<main-section v-if="isAuthenticated"></main-section>
 	<!-- <about-section></about-section> -->
 	<!-- <service-section></service-section> -->
 	<!-- <portfolio-section></portfolio-section> -->
@@ -22,7 +22,29 @@ export default {
 		// ServiceSection,
 		// PortfolioSection,
 		// ContactSection,
-	}
+	},
+
+	data() {
+    return {
+      isAuthenticated: false, // Флаг доступа
+      correctPassword: "nft", // Установите ваш пароль
+    };
+  },
+  mounted() {
+    this.checkAccess(); // Проверяем доступ при загрузке страницы
+  },
+  methods: {
+    checkAccess() {
+      const userInput = window.prompt("Введите пароль для доступа к сайту:");
+      if (userInput === this.correctPassword) {
+        this.isAuthenticated = true;
+      } else {
+        // alert("Неверный пароль! Доступ запрещен.");
+        // this.isAuthenticated = false;
+        window.location.href = "https://google.com"; // Перенаправление на другой сайт
+      }
+    },
+  },
 }
 </script>
 
