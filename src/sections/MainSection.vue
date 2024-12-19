@@ -6,6 +6,7 @@
         muted
         autoplay
         loop
+        playsinline
         class="bg"
       >
       </video>
