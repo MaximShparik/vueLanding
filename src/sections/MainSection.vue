@@ -18,6 +18,9 @@
         </div>
         <div class="agent__selector">
           <!-- Список агентов -->
+          <div class="generate__agent" @click="openAgentGenerator">
+            Generate AI agent
+          </div>
           <div 
             v-for="(agent, index) in agents" 
             :key="index" 
@@ -26,9 +29,6 @@
           >
             {{ agent.name }}
           </div>
-          <div class="generate__agent" @click="openAgentGenerator">
-            Generate AI agent
-          </div>
         </div>
         <div class="social__media">
           <img src="@/assets/x.avif" alt="">
@@ -36,9 +36,13 @@
       </div>
 
       <div class="chat-container">
+        <div class="boboDesrc" v-if="activeAgent === 'Bobo Bush'">
+          BOBO BUSH
+        </div>
         <div class="agent__description" v-if="activeAgent !== 'Bobo Bush'">
           <div class="agent__img">
             <img :src="getActiveAgent.img" alt="agentAI">
+            <button @click="deleteAgent" class="delete">DELETE</button>
           </div>
           <div class="agent__description">
             It's your custom agent
@@ -65,10 +69,10 @@
         <form @submit.prevent="sendMessage" class="chat-input-form">
           <input 
             v-model="userInput" 
-            placeholder="Введите сообщение..." 
+            placeholder="Enter message..." 
             class="chat-input"
           />
-          <button type="submit" class="chat-submit">Отправить</button>
+          <button type="submit" class="chat-submit">SEND</button>
         </form>
       </div>
 
@@ -76,11 +80,11 @@
         <form @submit.prevent="generateAgent" class="chat-input-form">
           <textarea 
             v-model="agentInput" 
-            placeholder="Опишите своего агента..." 
+            placeholder="Describe your agent..." 
             class="chat-input"
             rows="10"
           ></textarea>
-          <button type="submit" class="chat-submit">Создать</button>
+          <button type="submit" class="chat-submit">CREATE</button>
         </form>
       </div>
     </div>
@@ -170,10 +174,9 @@ export default {
           this.scrollToBottom();
         });
       } catch (error) {
-        console.error("Ошибка при обращении к OpenAI:", error);
         if (activeAgentObj) {
           activeAgentObj.messages.push({
-            text: "Ошибка при получении ответа от агента.",
+            text: "ERROR, try again.",
             isUser: false,
           });
         }
@@ -202,7 +205,7 @@ export default {
     },
     generateAgent() {
       if (!this.agentInput.trim()) {
-        alert("Введите описание агента!");
+        alert("ENTER AGENT HISTORY!");
         return;
       }
 
@@ -224,6 +227,14 @@ export default {
       document.querySelector(".chat-container").style.display = "block";
       document.querySelector(".generator-container").style.display = "none";
 
+      this.saveData();
+    },
+    deleteAgent () {
+      const agent = this.agents.find(agent => agent.name === this.activeAgent);
+      console.log(agent)
+      this.agents = this.agents.filter(el => el.name !== agent.name)
+      console.log(this.agents)
+      this.switchAgent({ name: 'Bobo Bush' })
       this.saveData();
     },
     saveData() {
@@ -251,14 +262,20 @@ export default {
 </script>
 
 <style>
+.boboDesrc {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
 .agent__img img {
   height: 150px;
   border-radius: 10px;
 }
 .agent__description {
-  display: flex;
+  display: grid;
   gap: 20px;
   margin-bottom: 10px;
+  grid-template-columns: 1fr auto;
 }
 .generator-container {
   display: none;
@@ -474,13 +491,89 @@ export default {
   background: #28e56b;
 }
 
+.delete {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  width: 150px;
+  background: #ff313187;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 5px;
+}
+
+.delete:hover {
+  background: #ff3131c9;
+}
+
 @media only screen and (max-width: 1000px) {
+  .generate__agent, .agent-selector, .agent-selector.selected {
+    text-shadow: none;
+    animation: none;
+  }
   .bg {
     transform: translate(-51%, -50%);
     width: 100vw;
   }
   .chat-container {
-    width: 90%;
+    width: 94vw;
+    bottom: 10px;
+    padding: 10px;
   }
+  .boboDesrc {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    line-height: 20px;
+    padding: 10px 10px;
+  }
+  .agent__selector {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin: 0 auto;
+  }
+  .social__media {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .generator-container {
+    width: 94vw;
+    bottom: 10px;
+    padding: 10px;
+  }
+  .chat-input-form {
+    flex-direction: column;
+  }
+  .chat-input, .chat-submit {
+    width: 100%;
+  }
+  /* .agent__description {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  } */
+   .delete, .agent__img img {
+    width: 100px;
+   }
+   .agent__img img {
+    height: 100px;
+   }
+   .agent__selector {
+    max-height: 100px;
+    overflow: auto;
+   }
+   .chat-message.user {
+    margin-right: 0;
+   }
+   .chat-window {
+    max-height: calc(100vh - 430px);
+   }
+   .tiker {
+    line-height: 40px;
+   }
 }
 </style>
