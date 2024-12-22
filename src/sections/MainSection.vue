@@ -387,7 +387,7 @@ export default {
   margin-bottom: 20px;
 }
 .agent__img img {
-  height: 150px;
+  height: 250px;
   cursor: pointer;
   border-radius: 10px;
 }
@@ -554,7 +554,7 @@ export default {
 .chat-window {
   flex: 1;
   overflow-y: scroll;
-  max-height: 50vh;
+  max-height: 40vh;
   /* margin-bottom: 10px;
   padding-right: 10px; */
 }
@@ -615,7 +615,7 @@ export default {
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
-  width: 150px;
+  width: 250px;
   background: #ff313187;
   color: #000;
   cursor: pointer;
