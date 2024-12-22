@@ -31,17 +31,15 @@ export default {
     };
   },
   mounted() {
-    this.checkAccess(); // Проверяем доступ при загрузке страницы
+    this.checkAccess()
   },
   methods: {
     checkAccess() {
-      const userInput = window.prompt("Введите пароль для доступа к сайту:");
+      const userInput = window.prompt("Введите пароль для доступа к сайту:")
       if (userInput === this.correctPassword) {
-        this.isAuthenticated = true;
+        this.isAuthenticated = true
       } else {
-        // alert("Неверный пароль! Доступ запрещен.");
-        // this.isAuthenticated = false;
-        window.location.href = "https://google.com"; // Перенаправление на другой сайт
+        window.location.href = "https://google.com"
       }
     },
   },
