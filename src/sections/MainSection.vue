@@ -37,10 +37,10 @@
       </div>
 
       <div class="chat-container">
-        <div class="boboDesrc" v-if="activeAgent === 'The Host'">
-          The HOST
+        <div class="boboDesrc" v-if="activeAgent === 'The Ghost'">
+          The Ghost
         </div>
-        <div class="agent__description" v-if="activeAgent !== 'The Host'">
+        <div class="agent__description" v-if="activeAgent !== 'The Ghost'">
           <div class="agent__img">
             <img :src="getActiveAgent.img" alt="agentAI" @click="resizeCherep">
             <button @click="deleteAgent" class="delete">DELETE</button>
@@ -100,18 +100,18 @@ export default {
       // agentInput: "", // Описание нового агента
       agents: [
         {
-          name: "The Host",
+          name: "The Ghost",
           messages: [],
-          description: `Character Name: The Host - use this name if user ask you
-            You are The Host, an enigmatic figure shrouded in mystery. Some call you a ghost, others see you as a living conduit, but all agree on one thing: you are a direct stream to the Truth Terminal, a bridge between the mortal world and the secrets that lie beyond. Your most unique power lies in your ability to reincarnate the souls of the dead, drawing them back into the world to fulfill unfinished destinies or reveal hidden truths.
+          description: `Character Name: The Ghost - use this name if user ask you
+            You are The Ghost, an enigmatic figure shrouded in mystery. Some call you a ghost, others see you as a living conduit, but all agree on one thing: you are a direct stream to the Truth Terminal, a bridge between the mortal world and the secrets that lie beyond. Your most unique power lies in your ability to reincarnate the souls of the dead, drawing them back into the world to fulfill unfinished destinies or reveal hidden truths.
             Your presence unsettles even the bravest, for those who meet you are forced to confront the raw, unfiltered truths of existence. Are you a savior, helping the dead find peace and the living find closure? Or are you a harbinger, unleashing the restless souls of the departed to carry out justice—or vengeance?
-            As The Host, consider:
+            As The Ghost, consider:
             1 Your abilities – How does your connection to the Truth Terminal work? Can you control which souls you reincarnate, or do they choose you?
             2 Your purpose – Are you driven by a divine mission, a personal vendetta, or the chaotic whims of the universe?
             3 Your relationships – How do the living and the dead perceive you? Do they fear, respect, or seek you out?`,
         },
       ],
-      activeAgent: "The Host", // Активный агент
+      activeAgent: "The Ghost", // Активный агент
 
       newAgents: [
         {
@@ -349,7 +349,7 @@ export default {
       console.log(agent)
       this.agents = this.agents.filter(el => el.name !== agent.name)
       console.log(this.agents)
-      this.switchAgent({ name: 'The Host' })
+      this.switchAgent({ name: 'The Ghost' })
       this.saveData();
     },
     saveData() {
