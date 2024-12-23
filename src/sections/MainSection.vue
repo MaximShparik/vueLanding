@@ -35,6 +35,9 @@
           <img src="@/assets/x.avif" alt="">
         </div>
       </div>
+      <div class="info">
+        Mint your own Agent. Full ownership rights recorded on the Solana blockchain. Coming Soon.
+      </div>
 
       <div class="chat-container">
         <div class="boboDesrc" v-if="activeAgent === 'The Ghost'">
@@ -345,15 +348,17 @@ export default {
       // Создаем нового агента с описанием
       const newAgent = getRandomAndRemove(this.newAgents)
 
-      this.agents.push(newAgent); // Добавляем нового агента в список
-      this.activeAgent = newAgent.name; // Устанавливаем нового агента как активного
-      // this.agentInput = ""; // Очистка поля ввода
-      // console.log(this.newAgents.length)
+      if (newAgent) {
+        this.agents.push(newAgent); // Добавляем нового агента в список
+        this.activeAgent = newAgent.name; // Устанавливаем нового агента как активного
+        // this.agentInput = ""; // Очистка поля ввода
+        // console.log(this.newAgents.length)
 
-      document.querySelector(".chat-container").style.display = "block";
-      // document.querySelector(".generator-container").style.display = "none";
+        document.querySelector(".chat-container").style.display = "block";
+        // document.querySelector(".generator-container").style.display = "none";
 
-      this.saveData();
+        this.saveData();
+      }
     },
     deleteAgent () {
       const agent = this.agents.find(agent => agent.name === this.activeAgent);
@@ -392,6 +397,10 @@ export default {
 </script>
 
 <style>
+.info {
+  text-align: center;
+  font-size: 18px;
+}
 .boboDesrc {
   font-size: 30px;
   text-align: center;
