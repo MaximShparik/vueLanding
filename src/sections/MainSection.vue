@@ -261,23 +261,34 @@ export default {
 
       try {
         // Запрос к OpenAI API
-        const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        // const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        //   method: "POST",
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //     Authorization: `Bearer ${process.env.VUE_APP_SECRET_KEY}`,
+        //   },
+        //   body: JSON.stringify({
+        //     model: "gpt-4", // Или "gpt-3.5-turbo"
+        //     messages: [
+        //       { role: "system", content: activeAgentObj.description },
+        //       { role: "user", content: userMessage },
+        //     ],
+        //   }),
+        // });
+        const response = await fetch("http://localhost:5000/news/agentAI", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${process.env.VUE_APP_SECRET_KEY}`,
+            // Authorization: `Bearer ${process.env.VUE_APP_SECRET_KEY}`,
           },
           body: JSON.stringify({
-            model: "gpt-4", // Или "gpt-3.5-turbo"
-            messages: [
-              { role: "system", content: activeAgentObj.description },
-              { role: "user", content: userMessage },
-            ],
-          }),
+            description: activeAgentObj.description,
+            content: userMessage
+          })
         });
 
         const data = await response.json();
-        const reply = data.choices[0].message.content;
+        const reply = data.content;
 
         // Добавление ответа агента
         if (activeAgentObj) {
