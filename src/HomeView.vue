@@ -26,12 +26,12 @@ export default {
 
 	data() {
     return {
-      isAuthenticated: false, // Флаг доступа
+      isAuthenticated: true, // Флаг доступа
       correctPassword: "nft", // Установите ваш пароль
     };
   },
   mounted() {
-    this.checkAccess()
+    // this.checkAccess()
   },
   methods: {
     checkAccess() {
