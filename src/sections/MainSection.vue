@@ -275,7 +275,7 @@ export default {
         //     ],
         //   }),
         // });
-        const response = await fetch("http://localhost:5000/news/agentAI", {
+        const response = await fetch("https://rbstation.work/news/agentAI", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -339,7 +339,7 @@ export default {
 
       // Автоматическая генерация имени агента из первых двух слов описания
       // const agentName = this.agentInput.split(' ').slice(0, 2).join(' ') || `AI Agent ${this.agents.length + 1}` ;
-      console.log(this.newAgents.length)
+      // console.log(this.newAgents.length)
       const getRandomAndRemove = (arr) => arr.length ? arr.splice(Math.floor(Math.random() * arr.length), 1)[0] : null;
 
       // Создаем нового агента с описанием
@@ -348,7 +348,7 @@ export default {
       this.agents.push(newAgent); // Добавляем нового агента в список
       this.activeAgent = newAgent.name; // Устанавливаем нового агента как активного
       // this.agentInput = ""; // Очистка поля ввода
-      console.log(this.newAgents.length)
+      // console.log(this.newAgents.length)
 
       document.querySelector(".chat-container").style.display = "block";
       // document.querySelector(".generator-container").style.display = "none";
@@ -357,9 +357,9 @@ export default {
     },
     deleteAgent () {
       const agent = this.agents.find(agent => agent.name === this.activeAgent);
-      console.log(agent)
+      // console.log(agent)
       this.agents = this.agents.filter(el => el.name !== agent.name)
-      console.log(this.agents)
+      // console.log(this.agents)
       this.switchAgent({ name: 'The Ghost' })
       this.saveData();
     },
@@ -385,7 +385,7 @@ export default {
   },
   mounted() {
     // Загрузка данных при монтировании компонента
-    console.log(process.env)
+    // console.log(process.env)
     this.loadData();
   },
 };
