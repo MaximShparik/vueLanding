@@ -32,12 +32,20 @@
           </div>
         </div>
         <div class="social__media">
-          <img src="@/assets/x.avif" alt="">
+          <a href="https://x.com/skeletosai" target="_blank" rel="noopener noreferrer">
+            <img src="@/assets/x.avif" alt="">
+          </a>
+          <a href="https://skeletos-ai.gitbook.io/skeletos-ai/" target="_blank" rel="noopener noreferrer">
+            <img src="@/assets/gitbook.svg" alt="" style="background: white; border-radius: 11px; margin-left: 10px;">
+          </a>
         </div>
       </div>
       <div class="info">
         Mint your own Agent. Full ownership rights recorded on the Solana blockchain. Coming Soon.
       </div>
+      <!-- <div class="info">
+        CA - XXXX
+      </div> -->
 
       <div class="chat-container">
         <div class="boboDesrc" v-if="activeAgent === 'The Ghost'">
