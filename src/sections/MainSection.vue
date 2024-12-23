@@ -43,9 +43,9 @@
       <div class="info">
         Mint your own Agent. Full ownership rights recorded on the Solana blockchain. Coming Soon.
       </div>
-      <!-- <div class="info">
-        CA - XXXX
-      </div> -->
+      <div class="info">
+        CA - 68p4cHXQfUvWVb1jTu9TEYzwihnuqsB3Ptg75FJYpump
+      </div>
 
       <div class="chat-container">
         <div class="boboDesrc" v-if="activeAgent === 'The Ghost'">
