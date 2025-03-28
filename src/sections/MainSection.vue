@@ -1,4 +1,22 @@
 <template>
+  <div class="header">
+    <div class="logo">
+      <a href="http://" target="_blank" rel="noopener noreferrer">
+        <img src="@/assets/x.png" alt="">
+      </a>
+    </div>
+    <div class="contract">
+      <div class="block">
+        <div class="text" @click="copy('XXXXXXXXXXXXXXXXXXXXXXXXXXXXX')">XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>
+        <div class="btn" @click="copy('XXXXXXXXXXXXXXXXXXXXXXXXXXXXX')">Copy</div>
+      </div>
+    </div>
+    <div class="logo">
+      <a href="http://" target="_blank" rel="noopener noreferrer">
+        <img src="@/assets/tg.png" alt="">
+      </a>
+    </div>
+  </div>
   <div class="glitch-wrap">
     <div class="imgWrap">
       <!-- Базовые слои -->
@@ -36,7 +54,7 @@
       <div class="noise-layer"></div>
 
       <!-- Текст -->
-      <span class="text"><span>WELCOME</span></span>
+      <GlitchText />
     </div>
 
     <!-- SVG Noise Filter (дополнительно) -->
@@ -62,22 +80,32 @@
 </template>
 
 <script>
+import GlitchText from '@/components/GlitchText.vue';
+
 export default {
   name: 'GlitchBackground',
+  components: {
+    GlitchText
+  },
   data() {
     return {
       currentIndex: 0,
       images: [
         require('@/assets/1.webp'),
+        require('@/assets/13.jpg'),
+        require('@/assets/11.jpg'),
+        // require('@/assets/15.JPG'),
+        require('@/assets/10.webp'),
+        // require('@/assets/14.JPG'),
+        require('@/assets/8.webp'),
+        require('@/assets/9.webp'),
         require('@/assets/2.webp'),
         require('@/assets/3.webp'),
+        require('@/assets/12.jpg'),
         require('@/assets/4.webp'),
         require('@/assets/5.webp'),
         require('@/assets/6.webp'),
         require('@/assets/7.webp'),
-        require('@/assets/8.webp'),
-        require('@/assets/9.webp'),
-        require('@/assets/10.webp')
       ]
     };
   },
@@ -85,6 +113,20 @@ export default {
     currentImage() {
       return this.images[this.currentIndex];
     }
+  },
+  methods: {
+    copy (value) {
+      var inp =document.createElement('input')
+      document.body.appendChild(inp)
+      inp.value = value
+      inp.select()
+      document.execCommand('copy',false)
+      inp.remove()
+			// document.querySelector('.copy').style.background = '#00ff00'
+			// setTimeout(() => {
+			// 	document.querySelector('.copy').style.background = '#90D990'
+			// }, 300);
+    },
   },
   mounted() {
     setInterval(() => {
@@ -95,6 +137,31 @@ export default {
 </script>
 
 <style scoped>
+.block {
+  display: flex;
+  text-transform: uppercase;
+  font-size: 50px;
+  color: #f30000;
+  cursor: pointer;
+}
+.text {
+  margin-right: 10px;
+  word-break: break-word;
+  white-space: normal;
+  text-align: center;
+}
+.logo img {
+  height: 50px;
+  margin: 0 20px;
+}
+.header {
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  top: 20px;
+}
 .glitch-wrap {
   width: 100vw;
   height: 100vh;
@@ -254,5 +321,20 @@ export default {
 
 .filter {
   display: none;
+}
+
+@media (max-width: 1100px) {
+	.logo img {
+    height: 30px;
+  }
+  .block {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 700px) {
+	.btn {
+    display: none;
+  }
 }
 </style>
