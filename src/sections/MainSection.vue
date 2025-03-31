@@ -7,8 +7,8 @@
     </div>
     <div class="contract">
       <div class="block">
-        <div class="text" @click="copy('XXXXXXXXXXXXXXXXXXXXXXXXXXXXX')">XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>
-        <div class="btn" @click="copy('XXXXXXXXXXXXXXXXXXXXXXXXXXXXX')">Copy</div>
+        <div class="text" @click="copy('2K5vtGSsTi3f7wUzMtBijoyMPbAbLK4HgKYETwqHpump')">2K5vtGSsTi3f7wUzMtBijoyMPbAbLK4HgKYETwqHpump</div>
+        <div class="btn" @click="copy('2K5vtGSsTi3f7wUzMtBijoyMPbAbLK4HgKYETwqHpump')">Copy</div>
       </div>
     </div>
     <div class="logo">
