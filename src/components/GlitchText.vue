@@ -55,9 +55,9 @@ export default {
 <style scoped>
 .glitch-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 30%;
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
   font-size: 50px;
   color: white;
   font-weight: bold;
@@ -69,12 +69,14 @@ export default {
   /* CRT + VHS дрожание + скольжение */
   animation: crtShake 0.12s infinite, vhsDrift 4s infinite alternate;
   opacity: 0.9;
+	width: 100%;
+	text-align: center;
 }
 
 /* Исчезновение для смены текста */
 .glitch-text--hidden {
   opacity: 0;
-  transform: translate(-50%, -50%) scale(1.2) rotate(3deg);
+  transform: scale(1.2) rotate(3deg);
   filter: blur(3px);
 }
 
@@ -104,18 +106,18 @@ export default {
 
 /* === VHS DRIFT === */
 @keyframes vhsDrift {
-  0% { transform: translate(-50%, -50%) translateX(0); }
-  50% { transform: translate(-50%, -50%) translateX(-2px); }
-  100% { transform: translate(-50%, -50%) translateX(2px); }
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-2px); }
+  100% { transform: translateX(2px); }
 }
 
 /* === CRT SHAKE === */
 @keyframes crtShake {
-  0% { transform: translate(-50%, -50%) translate(0px, 0px); }
-  25% { transform: translate(-50%, -50%) translate(1px, -1px); }
-  50% { transform: translate(-50%, -50%) translate(-1px, 1px); }
-  75% { transform: translate(-50%, -50%) translate(1px, 1px); }
-  100% { transform: translate(-50%, -50%) translate(0px, 0px); }
+  0% { transform: translate(0px, 0px); }
+  25% { transform: translate(1px, -1px); }
+  50% { transform: translate(-1px, 1px); }
+  75% { transform: translate(1px, 1px); }
+  100% { transform: translate(0px, 0px); }
 }
 
 /* === FLASH EFFECT === */

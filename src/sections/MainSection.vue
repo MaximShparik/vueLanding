@@ -51,31 +51,20 @@
       </svg>
 
       <!-- Шум -->
-      <div class="noise-layer"></div>
+      <!-- <div class="noise-layer"></div> -->
 
       <!-- Текст -->
       <GlitchText />
     </div>
 
-    <!-- SVG Noise Filter (дополнительно) -->
-    <svg class="filter" version="1.1">
-      <defs>
-        <filter id="alphaRed">
-          <feColorMatrix type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" />
-        </filter>
-        <filter id="alphaGreen">
-          <feColorMatrix type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" />
-        </filter>
-        <filter id="alphaBlue">
-          <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" />
-        </filter>
-        <filter id="noiseFilter">
-          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" result="noise" />
-          <feColorMatrix type="saturate" values="0" />
-          <feBlend in="SourceGraphic" in2="noise" mode="multiply" />
-        </filter>
-      </defs>
-    </svg>
+  </div>
+  <div class="search">
+    <div class="form">
+      <div class="form-block">
+        <input class="input" />
+        <div class="btnsearch" @click="ask">ASK</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -127,16 +116,131 @@ export default {
 			// 	document.querySelector('.copy').style.background = '#90D990'
 			// }, 300);
     },
+    ask () {
+      // document.querySelector('.btnsearch').textContent = 'WAIT...'
+      // document.querySelector('.btnsearch').setAttribute('disabled', true)
+    }
   },
   mounted() {
     setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.images.length;
-    }, 4000);
+    }, 2000);
+    document.querySelector('.btnsearch').addEventListener('click', function() {
+      const btn = this;
+      
+      // Ставим кнопку в состояние загрузки
+      btn.classList.add('loading');
+      btn.setAttribute('disabled', true);  // делаем неактивной
+
+      // Пример: через 2 секунды возвращаемся к обычному состоянию
+      // setTimeout(() => {
+      //   btn.classList.remove('loading');
+      //   btn.removeAttribute('disabled');
+      // }, 2000);
+    });
   }
 };
 </script>
 
 <style scoped>
+/* .search {
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  width: 100%;
+  bottom: 20px;
+  color: #f30000;
+} */
+.btnsearch.loading {
+  position: relative;
+  color: transparent;     /* Прячем текст, чтобы виден был спиннер */
+  pointer-events: none;   /* Отключаем клики */
+}
+
+/* Cам спиннер реализуется псевдо-элементом */
+.btnsearch.loading::after {
+  content: "";
+  position: absolute;
+  top: 26%;
+  left: 34%;
+  width: 20px;
+  height: 20px;
+  /* margin: 0px 0 0 -8px; */
+  border: 2px solid #fff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  -webkit-animation: spin-2320c378 1s linear infinite;
+  animation: spin-2320c378 1s linear infinite;
+}
+
+/* Анимация вращения */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.btnsearch:disabled {
+  background-color: #9ca2ab;
+  cursor: not-allowed;
+  pointer-events: none; /* Отключаем нажатие */
+  transform: none;      /* Убираем эффект при наведении */
+}
+
+.search {
+  position: absolute;
+  color: #f30000;
+  z-index: 100;
+  bottom: 20px;
+  left: 30px;
+  right: 30px;
+  /* Растягиваем на всю доступную ширину между левым и правым краем */
+  text-align: center; /* Центрируем содержимое по горизонтали */
+}
+
+.form {
+  width: 100%;
+  max-width: 100%; /* Для надёжности */
+}
+
+.form-block {
+  display: flex;
+  justify-content: center;  /* Выравниваем элементы по центру в строке */
+  align-items: center;      /* Центрируем элементы по вертикали */
+  gap: 10px;                /* Промежуток между полем и кнопкой */
+  flex-direction: column;
+}
+
+.input {
+  width: 100%;
+  max-width: 500px;       /* Ограничение, чтобы поле было разумного размера */
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #f60000; /* Цвет рамки можете изменить */
+  border-radius: 4px;     /* Скруглённые углы */
+  outline: none;          /* Убираем выделение при фокусе (для разных браузеров) */
+  transition: border-color 0.3s; /* Плавный переход при наведении или фокусе */
+}
+
+.input:focus {
+  border-color: #888; /* Изменение цвета рамки при фокусе */
+}
+
+.btnsearch {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 25px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #f30000; /* Основной цвет кнопки (подберите свой) */
+  color: #fff;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btnsearch:hover {
+  background-color: #790303; /* Изменённый цвет при наведении */
+  transform: scale(1.03);    /* Немного увеличиваем кнопку при наведении */
+}
 .block {
   display: flex;
   text-transform: uppercase;
@@ -247,7 +351,7 @@ export default {
 }
 
 /* Шум */
-.noise-layer {
+/* .noise-layer {
   position: absolute;
   top: 0;
   left: 0;
@@ -261,7 +365,7 @@ export default {
   z-index: 10;
   mix-blend-mode: soft-light;
   filter: url(#noiseFilter);
-}
+} */
 
 /* Анимации */
 @keyframes imgGlitch {
@@ -317,10 +421,6 @@ export default {
   94% {
     filter: none;
   }
-}
-
-.filter {
-  display: none;
 }
 
 @media (max-width: 1100px) {
