@@ -16,12 +16,16 @@ export default {
   data() {
     return {
       phrases: [
-        "WELCOME",
-        "ENTER",
-        "RUN",
-        "DON'T LOOK BACK",
-        "ERROR",
-        "ESCAPE"
+				'Darkness',
+				'Light',
+				'Deepness',
+				'Vagina',
+				'Fear',
+				'Vulva',
+				'Anus',
+				'Mons pubis',
+				'Shadow',
+				'Crus clitoris'
       ],
       currentIndex: 0,
       isHidden: false,
