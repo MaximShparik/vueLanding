@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="logo">
-      <a href="http://" target="_blank" rel="noopener noreferrer">
+      <a href="https://t.me/aphroditecomm" target="_blank" rel="noopener noreferrer">
         <img src="@/assets/x.png" alt="">
       </a>
     </div>
@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="logo">
-      <a href="http://" target="_blank" rel="noopener noreferrer">
+      <a href="https://t.me/aphroditecomm" target="_blank" rel="noopener noreferrer">
         <img src="@/assets/tg.png" alt="">
       </a>
     </div>
