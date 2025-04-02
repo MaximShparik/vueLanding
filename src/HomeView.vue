@@ -1,32 +1,40 @@
 <template>
 
-	<main-section></main-section>
-	<!-- <about-section></about-section> -->
-	<!-- <service-section></service-section> -->
-	<!-- <portfolio-section></portfolio-section> -->
-	<!-- <contact-section></contact-section> -->
+	<FirstSection />
+	<!-- <SecondSection />
+	<ThirdSection />
+	<FourthSection /> -->
+	<div class="navigation">
+		Swipe up for more information.
+	</div>
 
 </template>
 
 <script>
-import MainSection from '@/sections/MainSection.vue';
-// import AboutSection from '@/sections/AboutSection.vue';
-// import ServiceSection from '@/sections/ServiceSection.vue';
-// import PortfolioSection from '@/sections/PortfolioSection.vue';
-// import ContactSection from '@/sections/ContactSection.vue';
+import FirstSection from '@/sections/FirstSection.vue';
+// import SecondSection from '@/sections/SecondSection.vue';
+// import ThirdSection from '@/sections/ThirdSection.vue';
+// import FourthSection from '@/sections/FourthSection.vue';
 
 export default {
 	components: {
-		MainSection,
-		// AboutSection,
-		// ServiceSection,
-		// PortfolioSection,
-		// ContactSection,
+		FirstSection,
+		// SecondSection,
+		// ThirdSection,
+		// FourthSection
 	}
 }
 </script>
 
 <style scoped>
-
+.navigation {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	text-align: center;
+	color: #333;
+	font-size: 18px;
+	font-family: 'Graphik-Medium', 'Arial';
+}
 
 </style>
