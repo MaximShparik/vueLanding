@@ -78,6 +78,7 @@ section {
   margin-left: 17px;
   border-left: 10px solid gray;
   display: flex;
+  justify-content: space-between;
 }
 .info__text .title {
   font-family: 'Graphik-Medium', 'Arial';
