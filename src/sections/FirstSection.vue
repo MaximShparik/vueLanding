@@ -70,7 +70,7 @@ section {
 }
 .item__description {
   background: url('@/assets/motul-bg.jpg') no-repeat #fff top / cover;
-  height: 45vh;
+  height: calc(45vh - 23px);
   padding-top: 23px;
 }
 .info__block {
