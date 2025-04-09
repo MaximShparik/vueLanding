@@ -29,12 +29,24 @@ export default {
 <style scoped>
 .navigation {
 	position: absolute;
-	bottom: 20px;
+	bottom: -60px;
 	width: 100%;
 	text-align: center;
 	color: #333;
 	font-size: 18px;
-	font-family: 'Graphik-Medium', 'Arial';
+	font-family: 
+  system-ui, 
+  -apple-system, 
+  BlinkMacSystemFont, 
+  'Segoe UI', 
+  Roboto, 
+  Oxygen, 
+  Ubuntu, 
+  Cantarell, 
+  'Open Sans', 
+  'Helvetica Neue', 
+  sans-serif;
+	letter-spacing: 0.6px; /* отступ в тексте*/
 }
 
 </style>
