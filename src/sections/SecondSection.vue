@@ -1,42 +1,131 @@
 <template>
-    <!-- Contact section start -->
-	<section id="contact-section" class="px-12 lg:px-32 py-16 relative">
-        <!-- Main text start -->
-		<h1 class="uppercase text-5xl mb-4 font-semibold ">
-			Contact us
-		</h1>
-		<!-- Main text end -->
-
-        <!-- Form start -->
-        <div class="grid grid-cols-1 md:grid-cols-2 w-full">
-            <div class="hidden md:flex justify-center items-center">
-                <img src="@/assets/camera.png" alt="">
+    <section>
+      <div class="item__description">
+        <div class="header">
+            <div class="title">
+                Product Information
             </div>
-            <div class="flex flex-col w-full items-center">
-                <label for="user_email" class="text-stone-500 text-left">E-mail address</label>
-                <input type="email" name="user_email" id="user_email" class="bg-stone-200 py-2 px-4 w-full mb-6 xl:w-1/2">
-
-                <label for="user_message" class="text-stone-500 text-left">Message</label>
-                <textarea name="user_message" id="user_message" cols="30" rows="10" class="bg-stone-200 py-2 px-4 w-full mb-6 xl:w-1/2"></textarea>
-
-                <button class="btn w-full md:w-1/2">Send</button>
+            <div class="border"></div>
+            <div class="logo">
+                <img class="logo" src="@/assets/Motul.svg">
             </div>
         </div>
-        <!-- Form end -->
-
-        <!-- Circle start -->
-        <div class="bg-neutral-200 h-44 w-44 md:h-52 md:w-52 rounded-full absolute -top-20 left-0 mt-16 -z-20"></div>
-        <!-- Circle end -->
-	</section>
-	<!-- Contact section end -->
-</template>
-
-<script>
-export default {
-
-}
-</script>
-
-<style>
-
-</style>
+        <div class="info">
+            <div class="article">8100 ECO-NERGY 5W30 12X1L</div>
+            <div class="text">100% Synthetic fuel economy engine oil for new technology engines powered with turbo diesel or gasoline engines requiring the use of oil with low friction and low HTHS. Compatible with catalytic converters. Ensures high temperature resistance and high oxidation resistance during the whole duration of the oil drain interval for a fully protected engine.</div>
+        </div>
+        <a href="https://www.motul.com/en-SG/products">
+            <div class="btn">
+                More Information
+            </div>
+        </a>
+        <div class="footer">
+            Page 2 of 4
+        </div>
+      </div>
+    </section>
+  </template>
+  
+  <script>
+  export default {
+    name: 'FirstSection',
+    components: {
+    },
+    data() {
+      return {
+      };
+    },
+    computed: {
+    },
+    methods: {
+    },
+    mounted() {
+    }
+  };
+  </script>
+  
+  <style scoped>
+  section {
+    max-width: 768px;
+    margin: 0 auto;
+    height: 100vh;
+    background-color: #fff;
+    position: relative;
+  }
+  .item__description {
+    background: url('@/assets/motul-big-bg.png') center top / cover no-repeat rgb(255, 255, 255);
+    height: 100vh;
+    /* height: fit-content; */
+    /* padding-top: 23px; */
+    /* padding-bottom: 0px; */
+  }
+  .header {
+    display: flex;
+    padding-left: 38px;
+    padding-top: 38px;
+  }
+  .title {
+    font-style: italic;
+    font-size: 20px;
+    line-height: 33px;
+    font-family: 'Arial';
+    font-weight: 900;
+  }
+  .border {
+    flex-grow: 1;
+    height: 1px;
+    background: #000;
+    margin: 16px;
+  }
+  .logo {
+    width: 78px;
+    margin-right: 33px;
+    margin-top: 2px;
+  }
+  .article {
+    font-family: 'Graphik-Bold', 'Arial';
+    color: #61686b;
+    font-size: 24px;
+    font-weight: 900;
+    padding-top: 23px;
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+  .text {
+    color: #000000b3;
+    font-size: 13px;
+    line-height: 1.67;
+    font-family: 'Graphik-Regular', 'Arial';
+    padding-top: 18px;
+    padding-left: 38px;
+    padding-right: 15px;
+  }
+  .btn {
+    margin-top: 45px;
+    margin-left: 38px;
+    color: rgb(237, 28, 36);
+    font-family: 'Graphik-Regular', 'Arial';
+    font-weight: 400;
+    text-transform: capitalize;
+    background: 0 0 !important;
+    border: 1px solid rgb(237, 28, 36);
+    font-size: 23px;
+    line-height: 38px;
+    padding-left: 35px;
+    padding-right: 35px;
+    width: fit-content;
+  }
+  a {
+    text-decoration: none;
+  }
+  .footer {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 14px;
+    color: #333;
+    font-family: 'Graphik-Regular', 'Arial';
+    font-weight: 400;
+    font-size: 20px;
+  }
+   </style>

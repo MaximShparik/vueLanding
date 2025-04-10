@@ -1,81 +1,128 @@
 <template>
-    <!-- Portfolio section start -->
-	<section id="portfolio-section" class="px-4 lg:px-8 py-16  relative">
-        <!-- Text wrapper start -->
-        <div class="flex gap-8 flex-col md:flex-row">
-            <!-- Main text start -->
-            <h1 class="uppercase text-5xl mb-4 font-semibold ">
-                OUR PORTFOLIO
-            </h1>
-            <p class="capitalize xl:w-1/2 text-stone-500 mb-8">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit dolores distinctio reiciendis obcaecati ea.
-            </p>
-            <!-- Main text end -->
+  <section>
+    <div class="item__description">
+      <div class="header">
+          <div class="title">
+            Useful Tools
+          </div>
+          <div class="border"></div>
+          <div class="logo">
+              <img class="logo" src="@/assets/Motul.svg">
+          </div>
+      </div>
+      <div class="info">
+        <div class="btn">
+          <img src="@/assets/oilIcon.png" alt="" class="icon">
+          <div class="text">
+            Oil Recommendation
+          </div>
+          <img src="@/assets/up.svg" alt="" class="arrow">
         </div>
-        <!-- Text wrapper end -->
-
-        <!-- Images grid start -->
-		<div class="grid-cols-2 md:grid-cols-5 grid mb-8 gap-4">
-            <div class="grid grid-cols-1 md:hidden gap-4">
-                <img src="@/assets/portfolio/portfolio1.jpg" alt="1" class="rounded-xl">
-                <img src="@/assets/portfolio/portfolio2.jpg" alt="2" class="rounded-xl">
-                <img src="@/assets/portfolio/portfolio3.jpg" alt="3" class="rounded-xl">
-                <img src="@/assets/portfolio/portfolio4.jpg" alt="4" class="rounded-xl">
-                <img src="@/assets/portfolio/portfolio5.jpg" alt="5" class="rounded-xl">
-            </div>
-            <div class="grid grid-cols-1 md:hidden gap-4">
-                <img src="@/assets/portfolio/portfolio6.jpg" alt="6" class="rounded-xl">
-                <img src="@/assets/portfolio/portfolio7.jpg" alt="7" class="rounded-xl">
-                <img src="@/assets/portfolio/portfolio8.jpg" alt="8" class="rounded-xl">
-                <img src="@/assets/portfolio/portfolio9.jpg" alt="9" class="rounded-xl">
-                <img src="@/assets/portfolio/portfolio10.jpg" alt="10" class="rounded-xl">
-            </div>
-
-            <div class="hidden md:flex flex-col gap-4">
-                <img src="@/assets/portfolio/portfolio1.jpg" alt="1" class="rounded-xl">
-                <img src="@/assets/portfolio/portfolio2.jpg" alt="2" class="rounded-xl">
-            </div>
-            <div class="hidden md:flex flex-col gap-4">
-                <img src="@/assets/portfolio/portfolio3.jpg" alt="1" class="rounded-xl">
-                <img src="@/assets/portfolio/portfolio4.jpg" alt="2" class="rounded-xl">
-            </div>
-            <div class="hidden md:flex flex-col gap-4">
-                <img src="@/assets/portfolio/portfolio8.jpg" alt="2" class="rounded-xl">
-                <img src="@/assets/portfolio/portfolio5.jpg" alt="2" class="rounded-xl">
-            </div>
-            <div class="hidden md:flex flex-col gap-4">
-                <img src="@/assets/portfolio/portfolio7.jpg" alt="1" class="rounded-xl">
-                <img src="@/assets/portfolio/portfolio6.jpg" alt="2" class="rounded-xl">
-            </div>
-            <div class="hidden md:flex flex-col gap-4">
-                <img src="@/assets/portfolio/portfolio9.jpg" alt="1" class="rounded-xl">
-                <img src="@/assets/portfolio/portfolio10.jpg" alt="2" class="rounded-xl">
-            </div>
+        <div class="info">
+          Use the VIN number to quickly look up the best oil product for your vehicle.
         </div>
-		<!-- Images grid end -->
-
-        <!-- "More" link start -->
-        <a href="#" class="text-end">
-            <p class="font-semibold text-lg group relative">
-                <span>Show more photos </span>
-                <i class="fa-solid fa-arrow-right"></i>
-            </p>
-        </a>
-        <!-- "More" link end -->
-
-        <!-- Circle start -->
-        <div class="bg-neutral-300 h-64 w-64 rounded-full absolute top-0 left-0 mt-16 -z-20"></div>
-        <!-- Circle end -->
-	</section>
-	<!-- Portfolio section end -->
+        <div class="btn">
+          <img src="@/assets/carIcon.png" alt="" class="icon">
+          <div class="text">
+            Find A Dealer
+          </div>
+          <img src="@/assets/up.svg" alt="" class="arrow">
+        </div>
+      </div>
+      <div class="footer">
+          Page 3 of 4
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
 export default {
-
-}
+  name: 'FirstSection',
+  components: {
+  },
+  data() {
+    return {
+    };
+  },
+  computed: {
+  },
+  methods: {
+  },
+  mounted() {
+  }
+};
 </script>
 
-<style>
+<style scoped>
+section {
+  max-width: 768px;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: #fff;
+  position: relative;
+}
+.item__description {
+  background: url('@/assets/motul-big-bg.png') center top / cover no-repeat rgb(255, 255, 255);
+  height: 100vh;
+  /* height: fit-content; */
+  /* padding-top: 23px; */
+  /* padding-bottom: 0px; */
+}
+.header {
+  display: flex;
+  padding-left: 38px;
+  padding-top: 38px;
+}
+.title {
+  font-style: italic;
+  font-size: 20px;
+  line-height: 33px;
+  font-family: 'Arial';
+  font-weight: 900;
+}
+.border {
+  flex-grow: 1;
+  height: 1px;
+  background: #000;
+  margin: 16px;
+}
+.logo {
+  width: 78px;
+  margin-right: 33px;
+  margin-top: 2px;
+}
 
-</style>
+.info {
+  padding-top: 38px;
+  padding-left: 31px;
+  padding-right: 31px;
+}
+.btn {
+  display: flex;
+  width: 100%;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+  color: rgb(33, 33, 33);
+  padding: 0 6px;
+}
+.icon {
+  width: 48px;
+  padding-right: 23px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.arrow {
+  width: 7px;
+}
+.footer {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 14px;
+  color: #333;
+  font-family: 'Graphik-Regular', 'Arial';
+  font-weight: 400;
+  font-size: 20px;
+}
+ </style>

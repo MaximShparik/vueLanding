@@ -18,7 +18,7 @@
       </div>
       <div class="faq__block">
         <div class="title">
-          For authentication please use a <a href="http://" target="_blank" rel="noopener noreferrer">compatible phone</a> & download the App
+          For authentication please use a <a href="https://sites.scantrust.com/scantrust/compatible-devices-app/" rel="noopener noreferrer">compatible phone</a> & download the App
         </div>
         <div class="btn">
           <img src="@/assets/circle-question.svg" alt="info" class="btn__icon" /> 
