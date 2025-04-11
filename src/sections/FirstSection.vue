@@ -115,13 +115,14 @@ section {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 35px;
+  margin-top: 20px;
   color: #000000DE;
   font-family: 'Graphik-Medium', sans-serif;
   font-size: 16px;
   max-width: 80%;
   margin-bottom: 10px;
-   font-weight: 600;
+   font-weight: 500;
+line-height: normal;
 }
 .faq__block a {
   text-decoration: none;
@@ -136,8 +137,8 @@ section {
   background: #ff7f00;
   color: white;
   border-radius: 20px;
-  margin: 20px auto 0;
-  font-weight: 600;
+  margin: 10px;
+  font-weight: 500;
   font-size: 16px;
   font-family: 'Graphik-Medium', sans-serif;
   white-space: nowrap; /* чтобы кнопка не ломалась на две строки */

@@ -16,9 +16,9 @@
           <div class="text">
             Oil Recommendation
           </div>
-          <img src="@/assets/up.svg" alt="" class="arrow">
+          <img src="@/assets/motulArrow.svg" alt="" class="arrow">
         </div>
-        <div class="info">
+      <div class="vin-text">
           Use the VIN number to quickly look up the best oil product for your vehicle.
         </div>
         <div class="btn">
@@ -26,7 +26,7 @@
           <div class="text">
             Find A Dealer
           </div>
-          <img src="@/assets/up.svg" alt="" class="arrow">
+          <img src="@/assets/motulArrow.svg" alt="" class="arrow">
         </div>
       </div>
       <div class="footer">
@@ -71,6 +71,7 @@ section {
 }
 .header {
   display: flex;
+  align-items: center;
   padding-left: 38px;
   padding-top: 38px;
 }
@@ -92,28 +93,48 @@ section {
   margin-right: 33px;
   margin-top: 2px;
 }
-
 .info {
   padding-top: 38px;
   padding-left: 31px;
   padding-right: 31px;
 }
+.vin-text {
+  font-family: 'Graphik-Regular', sans-serif;
+  color: #000000DE;
+  opacity: .6;
+  font-size: 16px;
+  line-height: 1.25;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  word-spacing: 2px;
+}
 .btn {
-  display: flex;
-  width: 100%;
-  background-color: rgb(250, 250, 250);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
-  color: rgb(33, 33, 33);
-  padding: 0 6px;
+display: flex;
+align-items: center;
+justify-content: start;
+background-color: #fafafa;
+box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
+padding: 10px 16px;
+margin-bottom: 20px;
+border-radius: 3px;
+}
+.text {
+  margin-right: auto;
+  padding-left: 12px;
+  font-family: 'Graphik-Regular', Arial;
+font-weight: 400;
+font-size: 18px;
+min-width: 88px;
+color: #000000DE;
+text-transform: capitalize;
 }
 .icon {
-  width: 48px;
-  padding-right: 23px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  width: 55.36px;
+  height: 46.23px;
 }
 .arrow {
   width: 7px;
+  padding-right: 12px;
 }
 .footer {
   position: absolute;
@@ -121,7 +142,7 @@ section {
   text-align: center;
   bottom: 14px;
   color: #333;
-  font-family: 'Graphik-Regular', 'Arial';
+  font-family: 'Graphik-Regular', sans-serif;
   font-weight: 400;
   font-size: 20px;
 }

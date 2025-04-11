@@ -47,6 +47,7 @@ export default {
   'Helvetica Neue', 
   sans-serif;
 	letter-spacing: 0.6px; /* отступ в тексте*/
+	margin-bottom: -70px;
 }
 
 </style>
