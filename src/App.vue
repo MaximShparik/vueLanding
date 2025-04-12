@@ -17,12 +17,13 @@
 // import FooterElement from '@/components/FooterElement.vue';
 import HomeView from '@/HomeView.vue';
 
+
 export default {
 	components: {
 		HomeView,
 		// FooterElement,
 		// NavbarElement
-	}
+	},
 }
 </script>
 

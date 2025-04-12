@@ -16,8 +16,8 @@
     }"
     class="mySwiper"
   >
-    <swiper-slide><FirstSection /></swiper-slide>
-    <swiper-slide><SecondSection /></swiper-slide>
+    <swiper-slide><FirstSection :article="article" /></swiper-slide>
+    <swiper-slide><SecondSection :article="article" /></swiper-slide>
     <swiper-slide><ThirdSection /></swiper-slide>
     <swiper-slide><FourthSection /></swiper-slide>
   </swiper>
@@ -28,6 +28,8 @@ import FirstSection from '@/sections/FirstSection.vue';
 import SecondSection from '@/sections/SecondSection.vue';
 import ThirdSection from '@/sections/ThirdSection.vue';
 import FourthSection from '@/sections/FourthSection.vue';
+
+import data from '@/data/articles.json'
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';  // Правильный импорт для Swiper 7+
@@ -45,6 +47,17 @@ export default {
     FourthSection,
     Swiper,
     SwiperSlide
+  },
+  data() {
+    return {
+			articles: data
+    };
+  },
+  computed: {
+    article () {
+      if (this.articles[this.$route.params.id]) return this.articles[this.$route.params.id]
+      return Object.values(this.articles)[0]
+    }
   }
 };
 </script>

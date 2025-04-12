@@ -11,8 +11,8 @@
             </div>
         </div>
         <div class="info">
-            <div class="article">8100 ECO-NERGY 5W30 12X1L</div>
-            <div class="text">100% Synthetic fuel economy engine oil for new technology engines powered with turbo diesel or gasoline engines requiring the use of oil with low friction and low HTHS. Compatible with catalytic converters. Ensures high temperature resistance and high oxidation resistance during the whole duration of the oil drain interval for a fully protected engine.</div>
+            <div class="article">{{article.name}}</div>
+            <div class="text">{{article.description}}</div>
         </div>
         <a href="https://www.motul.com/en-SG/products">
             <div class="btn">
@@ -34,6 +34,12 @@
     name: 'FirstSection',
     components: {
     },
+    props: {
+    article: {
+      type: Object,
+      default: () => {}
+    }
+  },
     data() {
       return {
       };

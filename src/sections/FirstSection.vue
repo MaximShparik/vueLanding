@@ -2,13 +2,13 @@
   <section>
     <img class="logo" src="@/assets/Motul.svg">
     <div class="item__img">
-      <img src="@/assets/item.png" alt="">
+      <img :src="require(`@/assets/${article.serialNumber}.png`)" alt="" />
     </div>
     <div class="item__description">
       <div class="info__block">
         <div class="info__text">
-          <div class="title">Thank You For Scanning<br>8100 ECO-NERGY 5W30 12X1L</div>
-          <div class="subtitle">Serial Number: K3EOZGWA</div>
+          <div class="title">Thank You For Scanning<br>{{article.name}}</div>
+          <div class="subtitle">Serial Number: {{article.serialNumber}}</div>
         </div>
         <div class="info__img">
           <!-- <img src="@/assets/qr.png" alt=""> -->
@@ -39,6 +39,12 @@
 export default {
   name: 'FirstSection',
   components: {
+  },
+  props: {
+    article: {
+      type: Object,
+      default: () => {}
+    }
   },
   data() {
     return {
