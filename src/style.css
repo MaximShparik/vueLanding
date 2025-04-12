@@ -20,3 +20,7 @@ html, body, #app {
   justify-content: center;
   align-items: center;
 }
+
+.section {
+  width: 100%;
+}
