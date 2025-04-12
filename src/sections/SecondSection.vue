@@ -23,6 +23,9 @@
             Page 2 of 4
         </div>
       </div>
+      <div class="arrow">
+        <img src="@/assets/up.svg" alt="" class="arrowimg">
+      </div>
     </section>
   </template>
   
@@ -130,4 +133,28 @@ font-size: 19.35px;
     font-weight: 400;
     font-size: 20px;
   }
+
+  @keyframes riseAndFade {
+  0% {
+    transform: translateX(-50%) translateY(0px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-15px);
+    opacity: 0;
+  }
+}
+.arrowimg {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  width: 23px;
+  animation: riseAndFade 1.5s ease-in-out infinite;
+}
    </style>
