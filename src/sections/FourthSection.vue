@@ -88,23 +88,23 @@ section {
   font-family: 'Graphik-Regular', 'Arial';
   font-weight: 400;
   font-size: 30px;
-  font-weight: 900;
-  padding-top: 51px;
+  font-weight: 400;
+  padding-top: 41px;
   padding-left: 32px;
   padding-right: 19px;
   padding-bottom: 64px;
 }
+.img {
+  margin-top: 35px;
+  width: 75px;
+  height: 75px;
+}
 .text {
   text-align: center;
-  color: #000000b3;
+  color: #000000DE;
   font-size: 15px;
-  line-height: 1.67;
   font-family: 'Graphik-Regular', 'Arial';
-  padding-top: 18px;
   word-spacing: 2px;
-}
-.img {
-  width: 75px;
 }
 .footer {
   position: absolute;

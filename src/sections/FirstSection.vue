@@ -2,7 +2,7 @@
   <section>
     <img class="logo" src="@/assets/Motul.svg">
     <div class="item__img">
-      <img :src="require(`@/assets/${article.serialNumber}.png`)" alt="" />
+       <img :src="require(`@/assets/${article.image}`)" alt="" />
     </div>
     <div class="item__description">
       <div class="info__block">
@@ -11,8 +11,6 @@
           <div class="subtitle">Serial Number: {{article.serialNumber}}</div>
         </div>
         <div class="info__img">
-          <!-- <img src="@/assets/qr.png" alt=""> -->
-          <!-- <img src="@/assets/qr code high quality.png" alt=""> -->
           <img src="@/assets/qr.gif" alt="">
         </div>
       </div>
