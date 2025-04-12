@@ -62,12 +62,14 @@ section {
   max-width: 768px;
   margin: 0 auto;
   height: 100vh;
+  height: 100dvh;
   background-color: #fff;
   position: relative;
 }
 .item__description {
   background: url('@/assets/motul-big-bg.png') center top / cover no-repeat rgb(255, 255, 255);
   height: 100vh;
+  height: 100dvh;
   /* height: fit-content; */
   /* padding-top: 23px; */
   /* padding-bottom: 0px; */
