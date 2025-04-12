@@ -13,7 +13,9 @@
       <div class="info">
           <div class="article">How May We Help You?</div>
           <div class="text">
-            <img src="@/assets/mail.png" alt="" class="img">
+            <a class="text" href="https://www.motul.com/sg/en/information/contact_us">
+              <img src="@/assets/mail.png" alt="" class="img">
+            </a>
             <p>CONTACT US</p>
           </div>
       </div>

@@ -11,23 +11,25 @@
           </div>
       </div>
       <div class="info">
-        <div class="btn">
+        <a class="btn" href="https://www.motul.com/sg/en/lubricants">
           <img src="@/assets/oilIcon.png" alt="" class="icon">
+          <!-- <a class="text" href="https://www.motul.com/sg/en/lubricants">Oil Recommendation</a> -->
           <div class="text">
             Oil Recommendation
           </div>
           <img src="@/assets/motulArrow.svg" alt="" class="arrow">
-        </div>
-      <div class="vin-text">
+        </a>
+        <div class="vin-text">
           Use the VIN number to quickly look up the best oil product for your vehicle.
         </div>
-        <div class="btn">
+        <a class="btn" href="https://www.motul.com/sg/en/resellers">
           <img src="@/assets/carIcon.png" alt="" class="icon">
+          <!-- <a class="text" href="https://www.motul.com/sg/en/resellers">Find A Dealer</a> -->
           <div class="text">
             Find A Dealer
           </div>
           <img src="@/assets/motulArrow.svg" alt="" class="arrow">
-        </div>
+        </a>
       </div>
       <div class="footer">
           Page 3 of 4
@@ -102,6 +104,9 @@ section {
   padding-top: 38px;
   padding-left: 31px;
   padding-right: 31px;
+}
+a {
+  text-decoration: none;
 }
 .vin-text {
   font-family: 'Graphik-Regular', sans-serif;
