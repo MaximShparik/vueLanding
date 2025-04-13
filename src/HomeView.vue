@@ -65,7 +65,7 @@ export default {
   },
   computed: {
     article () {
-      if (this.articles[this.$route.params.id]) return this.articles[this.$route.params.id]
+      // if (this.articles[this.$route.params.id]) return this.articles[this.$route.params.id]
       return Object.values(this.articles)[0]
     }
   },
@@ -96,6 +96,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #eee;
+  background: #999999;
 }
 </style>
