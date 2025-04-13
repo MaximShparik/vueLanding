@@ -71,7 +71,7 @@ export default {
     animation: slideUp 1s ease-out; 
     animation-delay: 1s;
   }
-  .animate-slide img {
+  .animate-slide .img {
     animation: bounce 1s ease both; 
     animation-delay: 1s;
   }
