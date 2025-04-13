@@ -20,9 +20,10 @@
         </div>
         <a href="https://www.motul.com/en-SG/products" :style="{ visibility: visibilityState }">
             <div class="btn">
-                More Information
+                <span>More Information</span>
             </div>
         </a>
+
         <div class="footer">
             Page 2 of 4
         </div>
@@ -75,25 +76,31 @@
   
   <style scoped>
   .animate-slide .header {
-    animation: slideIn 1s ease-out; 
-    animation-delay: 1s;
+    animation: slideIn 0.5s ease-out; 
+    animation-delay: 0.5s;
 
   }
   .animate-slide .article {
-    animation: slideUp 1s ease-out; 
-    animation-delay: 1s;
+    animation: slideUp 0.5s ease-out; 
+    animation-delay: 0.5s;
 
   }
   .animate-slide .text {
-    animation: slideUpLong 1s ease-out; 
-    animation-delay: 1s;
+    animation: slideUpLong 0.5s ease-out; 
+    animation-delay: 0.5s;
 
   }
   .animate-slide a {
-    animation: goVisible 1s ease-out; 
-    animation-delay: 1s;
-
+    animation: goVisible 0.5s ease-out; 
+    animation-delay: 0.5s;
   }
+
+  .animate-slide .btn {
+    animation: filledRed 0.5s ease-out forwards;
+    animation-delay: 0.6s;
+  }
+
+
   section {
     max-width: 768px;
     margin: 0 auto;
@@ -126,7 +133,7 @@
   .border {
     flex-grow: 1;
     height: 1px;
-    background: #000;
+    background: #000000;
     margin: 16px;
   }
   .logo {
@@ -155,22 +162,76 @@
     word-spacing: 2px;
 
   }
-  .btn {
+  /* .btn {
     margin-top: 45px;
     margin-left: 38px;
     color: rgb(237, 28, 36);
 font-family: 'Graphik-Regular', sans-serif;
    font-weight: 400;
     text-transform: capitalize;
-    background: 0 0 !important;
-    border: 1px solid rgb(237, 28, 36);
-    border-radius: 3px;
 font-size: 19.35px;
     line-height: 35px;
     padding-left: 36px;
     padding-right: 36px;
     display: inline-flex;
-  }
+    /* overflow: hidden; */
+    /* position: relative;
+    z-index: 1;
+
+color: #ed1c24;
+background-color: transparent;
+border: 1px solid rgb(237, 28, 36);
+border-radius: 3px; */
+
+
+  /* } */
+
+  .btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-top: 45px;
+  margin-left: 38px;
+  font-family: 'Graphik-Regular', sans-serif;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-size: 19.35px;
+  line-height: 35px;
+  padding-left: 36px;
+  padding-right: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ed1c24;
+  background-color: transparent;
+  border: 1px solid #ed1c24;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 35px;
+  touch-action: manipulation;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0%;
+  background-color: rgba(237, 28, 36, 0.1); /* 👈 прозрачный красный */
+  z-index: 0;
+  transition: width 0.9s ease;
+}
+
+.btn:active::before {
+  width: 100%;
+}
+.btn span {
+  position: relative;
+  z-index: 2;
+  color: #ed1c24;
+}
+
   a {
     text-decoration: none;
   }
@@ -252,4 +313,31 @@ font-size: 19.35px;
   }
 }
 
+@keyframes fillRed {
+  0% {
+background-color: transparent;
+color: #ed1c24;
+border-color: #ed1c24;
+  }
+  100% {
+    background-color: #ed1c24;
+    color: rgb(255, 255, 255);
+    border-color: #ed1c24;
+  }
+}
+/* Отключаем все нежелательные эффекты при тапе */
+a, a * {
+  -webkit-tap-highlight-color: transparent;
+  /* -webkit-tap-highlight-color: red; */
+  -webkit-touch-callout: none;
+
+
+
+  -webkit-user-select: none;
+  outline: none;
+  outline: #ed1c24;
+  border: none;
+  border: #ed1c24;
+  box-shadow: none;
+}
    </style>

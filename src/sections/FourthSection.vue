@@ -64,20 +64,20 @@ export default {
 
 <style scoped>
   .animate-slide .header {
-    animation: slideIn 1s ease-out; 
-    animation-delay: 1s;
+    animation: slideIn 0.5s ease-out; 
+    animation-delay: 0.5s;
   }
   .animate-slide .article {
-    animation: slideUp 1s ease-out; 
-    animation-delay: 1s;
+    animation: slideUp 0.5s ease-out; 
+    animation-delay: 0.5s;
   }
   .animate-slide .img {
-    animation: bounce 1s ease both; 
-    animation-delay: 1s;
+    animation: bounce 0.7s ease both; 
+    animation-delay: 0.7s;
   }
   .animate-slide .contactText {
-    animation: goVisible 1s ease-out; 
-    animation-delay: 1s;
+    animation: goVisible 0.6s ease-out; 
+    animation-delay: 0.6s;
   }
 section {
   max-width: 768px;
@@ -91,9 +91,6 @@ section {
   background: url('@/assets/motul-big-bg.png') center top / cover no-repeat rgb(255, 255, 255);
   height: 100vh;
   height: 100dvh;
-  /* height: fit-content; */
-  /* padding-top: 23px; */
-  /* padding-bottom: 0px; */
 }
 .header {
   display: flex;
@@ -132,6 +129,10 @@ section {
   margin-top: 35px;
   width: 75px;
   height: 75px;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-mask-image: radial-gradient(circle, black 100%, transparent 100%);
 }
 .text {
   text-align: center;
@@ -207,4 +208,14 @@ section {
     visibility: visible;
   }
 }
+
+a, a * {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
  </style>
