@@ -5,7 +5,7 @@
     :creative-effect="{
       prev: {
         translate: [0, '-100%', -100],  // Слайд отдаляется по оси Z (отдалённость нижнего края)
-        opacity: 0.5,
+        opacity: 1,
         rotate: [-50, 0, 0],  // Поворот по оси X (наклон вниз)
       },
       next: {
@@ -15,11 +15,20 @@
       }
     }"
     class="mySwiper"
+    @slideChange="slideChange"
   >
-    <swiper-slide><FirstSection :article="article" /></swiper-slide>
-    <swiper-slide><SecondSection :article="article" /></swiper-slide>
-    <swiper-slide><ThirdSection /></swiper-slide>
-    <swiper-slide><FourthSection /></swiper-slide>
+    <swiper-slide>
+      <FirstSection :article="article" :class="getAnimationClass(0)" :isActive="isActive(0)"/>
+    </swiper-slide>
+    <swiper-slide>
+      <SecondSection :article="article" :class="getAnimationClass(1)" :isActive="isActive(1)"/>
+    </swiper-slide>
+    <swiper-slide>
+      <ThirdSection :class="getAnimationClass(2)" :isActive="isActive(2)"/>
+    </swiper-slide>
+    <swiper-slide>
+      <FourthSection :class="getAnimationClass(3)" :isActive="isActive(3)"/>
+    </swiper-slide>
   </swiper>
 </template>
 
@@ -50,13 +59,26 @@ export default {
   },
   data() {
     return {
-			articles: data
+			articles: data,
+      currentSlide: 0
     };
   },
   computed: {
     article () {
       if (this.articles[this.$route.params.id]) return this.articles[this.$route.params.id]
       return Object.values(this.articles)[0]
+    }
+  },
+  methods: {
+    slideChange(swiper) {
+      this.currentSlide = swiper.activeIndex; // Обновляем текущий активный слайд
+    },
+    isActive(slideIndex) {
+      return this.currentSlide === slideIndex;
+    },
+    getAnimationClass(slideIndex) {
+      // Возвращаем класс для анимации, если слайд активен
+      return this.currentSlide === slideIndex ? 'animate-slide' : '';
     }
   }
 };

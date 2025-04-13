@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="item__description">
-      <div class="header">
+      <div class="header" :style="{ visibility: visibilityState }" @animationend="onAnimationEnd">
           <div class="title">
             Contact Us
           </div>
@@ -11,12 +11,12 @@
           </div>
       </div>
       <div class="info">
-          <div class="article">How May We Help You?</div>
+          <div class="article" :style="{ visibility: visibilityState }" @animationend="onAnimationEnd">How May We Help You?</div>
           <div class="text">
-            <a class="text" href="https://www.motul.com/sg/en/information/contact_us">
-              <img src="@/assets/mail.png" alt="" class="img">
+            <a class="text" href="https://www.motul.com/sg/en/information/contact_us" >
+              <img src="@/assets/mail.png" alt="" class="img" :style="{ visibility: visibilityState }" @animationend="onAnimationEnd">
             </a>
-            <p>CONTACT US</p>
+            <p class="contactText" :style="{ visibility: visibilityState }" @animationend="onAnimationEnd">CONTACT US</p>
           </div>
       </div>
       <div class="footer">
@@ -31,20 +31,54 @@ export default {
   name: 'FirstSection',
   components: {
   },
+  props: {
+    isActive: {
+      type: Boolean,
+      required: true, // Мы будем передавать информацию, активен ли слайд
+    },
+  },
   data() {
-    return {
-    };
-  },
-  computed: {
-  },
-  methods: {
-  },
+      return {
+        visibilityState: 'hidden',
+      };
+    },
+    watch: {
+        // Отслеживаем, изменился ли статус активности слайда
+        isActive() {
+            // setTimeout(() => {this.visibilityState = 'hidden';}, 2000)
+            this.visibilityState = 'hidden';
+        },
+    },
+    computed: {
+    },
+    methods: {
+        onAnimationEnd() {
+            // Меняем visibility на 'visible', когда анимация завершена
+            this.visibilityState = 'visible';
+        },
+    },
   mounted() {
   }
 };
 </script>
 
 <style scoped>
+  .animate-slide .header {
+    animation: slideIn 1s ease-out; 
+    animation-delay: 1s;
+  }
+  .animate-slide .article {
+    animation: slideUp 1s ease-out; 
+    animation-delay: 1s;
+  }
+  .animate-slide img {
+    animation: bounce 1s ease both; 
+    animation-delay: 1s;
+  }
+  .animate-slide .contactText {
+    animation: goVisible 1s ease-out; 
+    animation-delay: 1s;
+  }
 section {
   max-width: 768px;
   margin: 0 auto;
@@ -118,5 +152,59 @@ section {
 }
 .footer p {
   margin: 0;
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -10%, 0); /* Начальная позиция сверху */
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); /* Элемент на своей исходной позиции */
+    visibility: visible;
+  }
+}
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 10%, 0); /* Начальная позиция сверху */
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); /* Элемент на своей исходной позиции */
+    visibility: visible;
+  }
+}
+@keyframes bounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+    visibility: visible;
+  }
+  20% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(0.8);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  80% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes goVisible {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
  </style>
