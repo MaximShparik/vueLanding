@@ -1,141 +1,186 @@
 <template>
-    
-    <!-- <div class="carousel">
-      <button @click="prevImage" class="arrow left">
-        <img src="@/assets/navigate_before.png" alt="">
-      </button>
-      <div class="image-container">
-        <img :src="images[currentIndex]" alt="img" />
+  <div class="pukiman-wrapper">
+    <div class="left">
+      <div class="code-box">
+        <span class="CA">CA</span>
+        <span class="code-text">OxOXOXOXOXOXOXOXOXOXOXOXOXOXOXO666XOX</span>
+        <button class="copy-btn" @click="copy('xxx')">📋</button>
       </div>
-      <button @click="nextImage" class="arrow right">
-        <img src="@/assets/navigate_next.png" alt="">
-      </button>
-    </div> -->
-    <!-- <div class="twitter">
-      <blockquote class="twitter-tweet"><p lang="zxx" dir="ltr"><a href="https://t.co/TzMzUlmPcP">pic.twitter.com/TzMzUlmPcP</a></p>&mdash; GUBAMI ♱ ♱ (@gubamisosal) <a href="https://twitter.com/gubamisosal/status/1866023388315299872?ref_src=twsrc%5Etfw">December 9, 2024</a></blockquote> 
-    </div> -->
-    <div class="trash">
-        <!-- <img src="https://dd.dexscreener.com/ds-data/tokens/solana/HwPtbFpd3VTe3tfyosoVtPf9WPuSk5gAKkN5xp6Npump/header.png?size=xl&key=ec942d" alt="">
-        <div class="trashText">
-            Launch your sol meme -  <a href="https://t.me/solmemelaunch" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">DEV</a>
-        </div> -->
+      <div class="image-container">
+        <img src="@/assets/main.png" alt="Pukiman vomiting crypto" />
+      </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        currentIndex: 0,
-        images: [
-            require('@/assets/1.jpg'),
-            require('@/assets/2.jpg'),
-            require('@/assets/3.jpg'),
-            require('@/assets/4.jpg'),
-            require('@/assets/5.jpg'),
-            require('@/assets/6.jpg'),
-            // require('@/assets/7.jpeg'),
-            // require('@/assets/8.jpeg'),
-            // require('@/assets/9.jpeg'),
-        ],
-      };
+    <div class="right">
+      <div class="socialBOX">
+        <a href="http://" target="_blank" rel="noopener noreferrer">
+          <img src="@/assets/dex.png" alt="">
+        </a>
+        <a href="http://" target="_blank" rel="noopener noreferrer">
+          <img src="@/assets/tg.png" alt="">
+        </a>
+        <!-- <img src="@/assets/x.png" alt=""> -->
+      </div>
+      <div class="description">
+        <p>
+          Yo meet PUKIMAN — that’s Pac-Man after a 12-hour Shiba Inu binge . Dude’s not just pukin’, he’s exorcisin’ his own guts from the pure toxicity of stupid memecoins . We talkin’ DogeCoin 420, BabyElon, FlokiMarsChain… you name it, he bought the dip, and now he’s payin’ the price.
+        </p>
+      </div>
+      <div class="mini-image">
+        <img src="@/assets/secondary.png" alt="Pukiman thumbnail" />
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: "Piman",
+  methods: {
+    copy (value) {
+      var inp =document.createElement('input')
+      document.body.appendChild(inp)
+      inp.value = value
+      inp.select()
+      document.execCommand('copy',false)
+      inp.remove()
     },
-    methods: {
-      prevImage() {
-        this.currentIndex =
-          (this.currentIndex - 1 + this.images.length) % this.images.length;
-      },
-      nextImage() {
-        this.currentIndex = (this.currentIndex + 1) % this.images.length;
-      },
-    },
-  };
-  </script>
-  
-  <style>
-  .carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    height: 900px;
   }
-  
-  .image-container {
-    width: 600px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  .twitter {
-    max-width: 1000px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-  }
-  img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-  .carouselText {
-    position: absolute;
-    bottom: 40px;
-    font-size: 60px;
-  }
-  .arrow {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 10px;
-  user-select: none;
-  transition: transform 0.2s;
+};
+</script>
+
+<style scoped>
+.pukiman-wrapper {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  height: 100vh;
+  height: 100dvh;
+  max-height: 100vh;
+  max-height: 100dvh;
 }
 
-.arrow:hover {
-  transform: scale(1.4);
+.left, .right {
+  flex: 1;
+}
+
+.code-box {
+  position: absolute;
+  top: 0;
+  padding: 30px 20px 30px 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  border-radius: 0px 30px 30px 0px;
+  border: 3px solid #4f0a6e;
+  border-left: none;
+  width: fit-content;
+  background: #957BC5;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.image-container img {
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 .left {
-  margin-right: 10px; /* Отступ между стрелкой и картинкой */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: #523E7D;
+  padding-right: 50px;
 }
 
 .right {
-  margin-left: 10px; /* Отступ между стрелкой и картинкой */
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
-.trash {
-    position: relative; /* Родительский элемент для позиционирования текста */
-    display: inline-block;
-    width: 100%;
-    height: 100vh;
-}
-.trash img {
-    width: 100%;
-    height: 100%;
-}
-
-.trashText {
-  position: absolute; /* Абсолютное позиционирование внутри контейнера */
-  top: 50%; /* Размещение текста по вертикали */
-  left: 50%; /* Размещение текста по горизонтали */
-  transform: translate(-50%, -50%); /* Центрирование текста */
-  color: #0004FF !important; /* Цвет текста */
-  font-size: 150px; /* Размер текста */
-  font-weight: bold; /* Жирность текста */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Тень для читабельности */
+.description p {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #000;
   text-align: center;
 }
 
-@media (max-width: 1200px) {
-	.carousel {
-		height: 700px;
-	}
-  .trashText {
-    font-size: 100px;
-    width: 100%;
+.mini-image {
+  text-align: center;
+}
+
+.mini-image img {
+  width: 100%;
+  max-width: 250px;
+  border: 3px solid #ffcc00;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.socialBOX {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.socialBOX img {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.CA {
+  position: absolute;
+  font-size: 110px;
+  left: 0;
+  color: #ffffff57;
+}
+
+@media screen and (max-width: 1200px) {
+  .pukiman-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .code-box {
+    width: 100vw;
+    padding: 20px 20px 20px 20px;
+    justify-content: space-evenly;
+  }
+  .left {
+    padding: 0;
+  }
+  .image-container {
+    display: flex;
+    justify-content: center;
+  }
+  .image-container img {
+    width: none;
+    max-width: none;
+    height: none;
+    max-height: none;
+    width: 300px;
+    height: 300px;
+    margin-top: 110px;
+    margin-bottom: 40px;
+  }
+  .code-box {
+    word-break: break-all;
+  }
+  .right {
+    padding: 40px;
   }
 }
-  </style>
-  
+</style>
