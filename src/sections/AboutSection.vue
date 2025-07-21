@@ -7,7 +7,7 @@
         <button class="copy-btn" @click="copy('xxx')">📋</button>
       </div>
       <div class="image-container">
-        <img src="@/assets/main.png" alt="Pukiman vomiting crypto" />
+        <img src="@/assets/main.jpeg" alt="Pukiman vomiting crypto" />
       </div>
     </div>
     <div class="right">
