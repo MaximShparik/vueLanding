@@ -112,7 +112,7 @@ export default {
 }
 
 .description p {
-  font-size: 20px;
+  font-size: 1.5vw;
   font-weight: bold;
   line-height: 1.5;
   color: #000;
@@ -125,7 +125,7 @@ export default {
 
 .mini-image img {
   width: 100%;
-  max-width: 250px;
+  max-width: 25vw;
   border: 3px solid #ffcc00;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
@@ -134,11 +134,19 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  max-width: 200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.description {
+  max-width: 30vw;
+  margin: 0 auto;
 }
 
 .socialBOX img {
-  height: 40px;
-  width: 40px;
+  height: 3vw;
+  width: 3vw;
   cursor: pointer;
 }
 
@@ -181,6 +189,19 @@ export default {
   }
   .right {
     padding: 40px;
+  }
+  .mini-image img {
+    max-width: 80vw;
+  }
+  .socialBOX img {
+    height: 40px;
+    width: 40px;
+  }
+  .description {
+    max-width: 90vw;
+  }
+  .description p {
+    font-size: 20px;
   }
 }
 </style>
